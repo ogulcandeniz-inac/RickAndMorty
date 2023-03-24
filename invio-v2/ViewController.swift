@@ -11,8 +11,15 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var ımageViewRickAndMorty: UIImageView!
     @IBOutlet weak var ımageViewTitle: UIImageView!
-    @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var labelTdddtle: UILabel!
     var counter:Timer?
+    
+    @IBOutlet weak var labeladinikoy: UILabel!
+    
+    
+    @IBOutlet weak var labeltitle: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +33,10 @@ class ViewController: UIViewController {
         scaleanimation()
         
         
-        
+       
         let currentCount = UserDefaults.standard.integer(forKey: "launchCount")
-     
         
+        labeltitle.text = String(currentCount)
         
         if currentCount == 0
         {
@@ -42,6 +49,7 @@ class ViewController: UIViewController {
             counter = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(labelhello), userInfo: nil, repeats: false)
             UserDefaults.standard.set(currentCount-1, forKey:"launchCount")
         }
+       
         
         
         
@@ -59,20 +67,21 @@ class ViewController: UIViewController {
         let next = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerHomePage") as! ViewControllerHomePage
             self.navigationController?.pushViewController(next, animated: true)
     }
+    
     @objc func labelWelcome( )
     {
-        labelTitle.text = "Welcome"
+        labeltitle.text = "Welcome"
         repetitiveanimation()
     }
     @objc func labelhello( )
     {
-        labelTitle.text = "Hello"
+        labeltitle.text = "Hello"
         repetitiveanimation()
     }
     
     func repetitiveanimation()
     {
-        UIView.animate(withDuration: 2, delay: 0, options: [.repeat,.autoreverse], animations: { self.labelTitle.transform = CGAffineTransform(translationX: 0, y: 20)}, completion: nil)
+        UIView.animate(withDuration: 2, delay: 0, options: [.repeat,.autoreverse], animations: { self.labeltitle.transform = CGAffineTransform(translationX: 0, y: 20)}, completion: nil)
     }
     func animation()
     {
@@ -90,13 +99,13 @@ class ViewController: UIViewController {
     func scaleanimation2()
     {
         UIView.animate(withDuration: 5,animations: {
-            self.labelTitle.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+            self.labeltitle.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         }, completion: nil)
     }
     func scaleanimation3()
     {
         UIView.animate(withDuration: 5,animations: {
-            self.labelTitle.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self.labeltitle.transform = CGAffineTransform(scaleX: 1, y: 1)
         }, completion: nil)
     }
     

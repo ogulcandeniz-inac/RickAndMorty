@@ -26,13 +26,12 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rick_And_Morty_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="grv-si-ElQ">
                                 <rect key="frame" x="113" y="816" width="202" height="95"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiv-A6-tEx">
-                                <rect key="frame" x="155.66666666666666" y="841" width="116.66666666666666" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2o-zg-6Bn">
+                                <rect key="frame" x="139" y="838" width="150" height="56"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
-                                            <font key="NSFont" metaFont="system" size="50"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <font key="NSFont" size="50" name="Arial-BoldMT"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -42,19 +41,21 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="tiv-A6-tEx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LB5-AG-Sss"/>
+                            <constraint firstItem="X2o-zg-6Bn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="750" id="2eR-Kb-nVW"/>
+                            <constraint firstItem="X2o-zg-6Bn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8hH-pu-UyY"/>
                             <constraint firstItem="grv-si-ElQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="113" id="OcW-8s-eTt"/>
                             <constraint firstAttribute="bottom" secondItem="grv-si-ElQ" secondAttribute="bottom" constant="15" id="V0R-hu-1Cn"/>
                             <constraint firstItem="grv-si-ElQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="728" id="cYM-QK-CYI"/>
                             <constraint firstItem="Kn9-p8-tVq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cbs-rV-7Kr"/>
+                            <constraint firstItem="X2o-zg-6Bn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="139" id="mL1-tw-gs1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="grv-si-ElQ" secondAttribute="trailing" constant="113" id="pRQ-Ga-l9t"/>
                             <constraint firstItem="Kn9-p8-tVq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q3f-7H-yXV"/>
                             <constraint firstItem="Kn9-p8-tVq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rKM-dj-r10"/>
-                            <constraint firstItem="tiv-A6-tEx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="753" id="zJj-7K-NPu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mVk-Zm-yYY"/>
                     <connections>
+                        <outlet property="labeltitle" destination="X2o-zg-6Bn" id="kNr-Z8-4E2"/>
                         <outlet property="ımageViewRickAndMorty" destination="Kn9-p8-tVq" id="7cZ-2U-390"/>
                         <outlet property="ımageViewTitle" destination="grv-si-ElQ" id="G3G-9A-fDu"/>
                         <segue destination="RZL-PM-MCM" kind="show" identifier="mainpass" id="QDu-8e-2eq"/>
@@ -64,17 +65,17 @@
             </objects>
             <point key="canvasLocation" x="937.85046728971952" y="51.187904967602599"/>
         </scene>
-        <!--View Controller-->
+        <!--Ana Sayfa-->
         <scene sceneID="Qq2-vM-qKQ">
             <objects>
-                <viewController id="RZL-PM-MCM" customClass="ViewController" customModule="invio_v2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewControllerHomePage" id="RZL-PM-MCM" customClass="ViewControllerHomePage" customModule="invio_v2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ocb-i5-H47">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="NCs-nc-iV5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5tq-83-iMb"/>
+                    <navigationItem key="navigationItem" title="Ana Sayfa" id="5tq-83-iMb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPN-oc-LPp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
