@@ -16,6 +16,7 @@
 		E3228CB429CE253F0016D5FB /* invio_v2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3228CB329CE253F0016D5FB /* invio_v2Tests.swift */; };
 		E3228CBE29CE253F0016D5FB /* invio_v2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3228CBD29CE253F0016D5FB /* invio_v2UITests.swift */; };
 		E3228CC029CE253F0016D5FB /* invio_v2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3228CBF29CE253F0016D5FB /* invio_v2UITestsLaunchTests.swift */; };
+		E3228CCD29CE34A20016D5FB /* ViewControllerHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3228CCC29CE34A20016D5FB /* ViewControllerHomePage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		E3228CB929CE253F0016D5FB /* invio-v2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "invio-v2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3228CBD29CE253F0016D5FB /* invio_v2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = invio_v2UITests.swift; sourceTree = "<group>"; };
 		E3228CBF29CE253F0016D5FB /* invio_v2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = invio_v2UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E3228CCC29CE34A20016D5FB /* ViewControllerHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHomePage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				E3228C9E29CE253B0016D5FB /* SceneDelegate.swift */,
 				E3228CA029CE253B0016D5FB /* ViewController.swift */,
 				E3228CA229CE253B0016D5FB /* Main.storyboard */,
+				E3228CCC29CE34A20016D5FB /* ViewControllerHomePage.swift */,
 				E3228CA529CE253F0016D5FB /* Assets.xcassets */,
 				E3228CA729CE253F0016D5FB /* LaunchScreen.storyboard */,
 				E3228CAA29CE253F0016D5FB /* Info.plist */,
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3228CCD29CE34A20016D5FB /* ViewControllerHomePage.swift in Sources */,
 				E3228CA129CE253B0016D5FB /* ViewController.swift in Sources */,
 				E3228C9D29CE253B0016D5FB /* AppDelegate.swift in Sources */,
 				E3228C9F29CE253B0016D5FB /* SceneDelegate.swift in Sources */,
