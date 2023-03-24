@@ -27,11 +27,16 @@
                                 <rect key="frame" x="113" y="816" width="202" height="95"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2o-zg-6Bn">
-                                <rect key="frame" x="139" y="838" width="150" height="56"/>
+                                <rect key="frame" x="151" y="818" width="126.33333333333331" height="68.333333333333371"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68.329999999999998" id="J2R-7k-jKT"/>
+                                </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
-                                            <font key="NSFont" size="50" name="Arial-BoldMT"/>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="50" name="Avenir-Heavy"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -41,13 +46,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="X2o-zg-6Bn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="750" id="2eR-Kb-nVW"/>
-                            <constraint firstItem="X2o-zg-6Bn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8hH-pu-UyY"/>
                             <constraint firstItem="grv-si-ElQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="113" id="OcW-8s-eTt"/>
                             <constraint firstAttribute="bottom" secondItem="grv-si-ElQ" secondAttribute="bottom" constant="15" id="V0R-hu-1Cn"/>
+                            <constraint firstItem="X2o-zg-6Bn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xoi-3H-yuc"/>
                             <constraint firstItem="grv-si-ElQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="728" id="cYM-QK-CYI"/>
                             <constraint firstItem="Kn9-p8-tVq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cbs-rV-7Kr"/>
-                            <constraint firstItem="X2o-zg-6Bn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="139" id="mL1-tw-gs1"/>
+                            <constraint firstItem="X2o-zg-6Bn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="730" id="ghc-1r-hIQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="grv-si-ElQ" secondAttribute="trailing" constant="113" id="pRQ-Ga-l9t"/>
                             <constraint firstItem="Kn9-p8-tVq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="q3f-7H-yXV"/>
                             <constraint firstItem="Kn9-p8-tVq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rKM-dj-r10"/>
