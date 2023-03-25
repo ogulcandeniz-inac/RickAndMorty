@@ -11,19 +11,11 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var ımageViewRickAndMorty: UIImageView!
     @IBOutlet weak var ımageViewTitle: UIImageView!
-    @IBOutlet weak var labelTdddtle: UILabel!
-    var counter:Timer?
-    
-    @IBOutlet weak var labeladinikoy: UILabel!
-    
-    
     @IBOutlet weak var labeltitle: UILabel!
-    
-    
+    var counter:Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
         ımageViewRickAndMorty.addGestureRecognizer(tapGR)
@@ -32,18 +24,14 @@ class ViewController: UIViewController {
         animation()
         scaleanimation()
         
-        
-       
         let currentCount = UserDefaults.standard.integer(forKey: "launchCount")
-        
-        labeltitle.text = String(currentCount)
+        //labeltitle.text = String(currentCount)
         
         if currentCount == 0
         {
             counter = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(labelWelcome), userInfo: nil, repeats: false)
             UserDefaults.standard.set(currentCount+1, forKey:"launchCount")
         }
-        
         if currentCount >= 1
         {
             counter = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(labelhello), userInfo: nil, repeats: false)
@@ -78,7 +66,6 @@ class ViewController: UIViewController {
         labeltitle.text = "Hello"
         repetitiveanimation()
     }
-    
     func repetitiveanimation()
     {
         UIView.animate(withDuration: 2, delay: 0, options: [.repeat,.autoreverse], animations: { self.labeltitle.transform = CGAffineTransform(translationX: 0, y: 20)}, completion: nil)
@@ -119,6 +106,4 @@ class ViewController: UIViewController {
     
     
     
-    
 }
-

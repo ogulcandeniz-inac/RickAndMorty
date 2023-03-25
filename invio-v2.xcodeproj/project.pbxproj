@@ -17,6 +17,7 @@
 		E3228CBE29CE253F0016D5FB /* invio_v2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3228CBD29CE253F0016D5FB /* invio_v2UITests.swift */; };
 		E3228CC029CE253F0016D5FB /* invio_v2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3228CBF29CE253F0016D5FB /* invio_v2UITestsLaunchTests.swift */; };
 		E3228CCD29CE34A20016D5FB /* ViewControllerHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3228CCC29CE34A20016D5FB /* ViewControllerHomePage.swift */; };
+		E3228CCF29CE84F00016D5FB /* CollectionViewCellHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3228CCE29CE84F00016D5FB /* CollectionViewCellHomePage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		E3228CBD29CE253F0016D5FB /* invio_v2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = invio_v2UITests.swift; sourceTree = "<group>"; };
 		E3228CBF29CE253F0016D5FB /* invio_v2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = invio_v2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E3228CCC29CE34A20016D5FB /* ViewControllerHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHomePage.swift; sourceTree = "<group>"; };
+		E3228CCE29CE84F00016D5FB /* CollectionViewCellHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellHomePage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				E3228CA529CE253F0016D5FB /* Assets.xcassets */,
 				E3228CA729CE253F0016D5FB /* LaunchScreen.storyboard */,
 				E3228CAA29CE253F0016D5FB /* Info.plist */,
+				E3228CCE29CE84F00016D5FB /* CollectionViewCellHomePage.swift */,
 			);
 			path = "invio-v2";
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				E3228CA129CE253B0016D5FB /* ViewController.swift in Sources */,
 				E3228C9D29CE253B0016D5FB /* AppDelegate.swift in Sources */,
 				E3228C9F29CE253B0016D5FB /* SceneDelegate.swift in Sources */,
+				E3228CCF29CE84F00016D5FB /* CollectionViewCellHomePage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
