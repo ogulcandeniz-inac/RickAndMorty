@@ -79,7 +79,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="d0a-C8-yKH">
-                                <rect key="frame" x="0.0" y="88" width="428" height="804"/>
+                                <rect key="frame" x="0.0" y="134" width="428" height="758"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ohh-Kf-Y1o">
                                     <size key="itemSize" width="205" height="352"/>
@@ -135,18 +135,53 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rVx-Co-ZCl">
+                                <rect key="frame" x="0.0" y="88" width="428" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fF3-Pc-G2K">
+                                    <size key="itemSize" width="156" height="43"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KnL-Ho-YOB" customClass="HorizontalListCollectionViewCell" customModule="invio_v2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="156" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="R1e-7I-opA">
+                                            <rect key="frame" x="0.0" y="0.0" width="156" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPe-0T-FeR">
+                                                    <rect key="frame" x="57" y="11" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="156" height="43"/>
+                                        <connections>
+                                            <outlet property="labelLocation" destination="JPe-0T-FeR" id="8tl-by-4Li"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NCs-nc-iV5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="NCs-nc-iV5" firstAttribute="bottom" secondItem="d0a-C8-yKH" secondAttribute="bottom" id="0Eb-pk-Bxv"/>
-                            <constraint firstItem="d0a-C8-yKH" firstAttribute="leading" secondItem="NCs-nc-iV5" secondAttribute="leading" id="30H-nB-bkk"/>
-                            <constraint firstItem="d0a-C8-yKH" firstAttribute="top" secondItem="NCs-nc-iV5" secondAttribute="top" id="Ggs-Uu-iNA"/>
+                            <constraint firstItem="d0a-C8-yKH" firstAttribute="top" secondItem="NCs-nc-iV5" secondAttribute="top" constant="46" id="exh-RR-g3m"/>
                             <constraint firstItem="NCs-nc-iV5" firstAttribute="trailing" secondItem="d0a-C8-yKH" secondAttribute="trailing" id="iPK-jg-5Dx"/>
+                            <constraint firstItem="d0a-C8-yKH" firstAttribute="leading" secondItem="Ocb-i5-H47" secondAttribute="leading" id="sWJ-89-Aer"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ana Sayfa" id="4wp-GM-tN1"/>
                     <connections>
+                        <outlet property="CollectionViewCharacter" destination="d0a-C8-yKH" id="9ay-W7-3d5"/>
                         <segue destination="eBL-vt-uK9" kind="show" identifier="characterDetail" id="Ber-k6-q2Y"/>
                     </connections>
                 </viewController>
@@ -157,7 +192,7 @@
         <!--Character Detail-->
         <scene sceneID="efc-RU-jdA">
             <objects>
-                <viewController id="eBL-vt-uK9" sceneMemberID="viewController">
+                <viewController id="eBL-vt-uK9" customClass="CharacterDetailViewController" customModule="invio_v2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KlY-Z5-mgD">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -361,6 +396,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Character Detail" id="4G4-aq-hQt"/>
+                    <connections>
+                        <outlet property="imageViewCharacterPicture" destination="5WN-7H-Uqf" id="C2E-sX-xZI"/>
+                        <outlet property="labelCreated" destination="1bl-oe-fmh" id="eeW-l8-76M"/>
+                        <outlet property="labelEpisodes" destination="zKV-Xd-z1h" id="jUr-Jr-EDj"/>
+                        <outlet property="labelGender" destination="uUN-BR-5nI" id="p7T-Cc-HSK"/>
+                        <outlet property="labelLocation" destination="XVX-Uw-WU3" id="uNO-gE-jrh"/>
+                        <outlet property="labelOrgin" destination="SL3-7X-gjx" id="Dr1-q3-41k"/>
+                        <outlet property="labelSpecy" destination="phg-si-48J" id="lh5-Ke-dkB"/>
+                        <outlet property="labelStatus" destination="6bk-Pz-BSB" id="Wyh-Vb-ZJu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="18g-x9-LvP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
