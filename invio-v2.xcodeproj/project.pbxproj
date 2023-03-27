@@ -23,6 +23,8 @@
 		E3228CD529CFE7160016D5FB /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3228CD429CFE7160016D5FB /* Character.swift */; };
 		E3228CD729CFEA650016D5FB /* CharacterReply.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3228CD629CFEA650016D5FB /* CharacterReply.swift */; };
 		E3228CD929CFF2E30016D5FB /* HorizontalListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3228CD829CFF2E20016D5FB /* HorizontalListCollectionViewCell.swift */; };
+		E3769C4C29D0E8A300E5134F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3769C4B29D0E8A300E5134F /* Location.swift */; };
+		E3769C4E29D0EA5900E5134F /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3769C4D29D0EA5900E5134F /* Episode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		E3228CD429CFE7160016D5FB /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		E3228CD629CFEA650016D5FB /* CharacterReply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterReply.swift; sourceTree = "<group>"; };
 		E3228CD829CFF2E20016D5FB /* HorizontalListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalListCollectionViewCell.swift; sourceTree = "<group>"; };
+		E3769C4B29D0E8A300E5134F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		E3769C4D29D0EA5900E5134F /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 				E3228CD829CFF2E20016D5FB /* HorizontalListCollectionViewCell.swift */,
 				E3228CD229CFE6F40016D5FB /* File.swift */,
 				E3228CD429CFE7160016D5FB /* Character.swift */,
+				E3769C4B29D0E8A300E5134F /* Location.swift */,
+				E3769C4D29D0EA5900E5134F /* Episode.swift */,
 				E3228CD629CFEA650016D5FB /* CharacterReply.swift */,
 				E3228CD029CFCF210016D5FB /* CharacterDetailViewController.swift */,
 				E3228CCC29CE34A20016D5FB /* ViewControllerHomePage.swift */,
@@ -280,6 +286,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3228CCD29CE34A20016D5FB /* ViewControllerHomePage.swift in Sources */,
+				E3769C4E29D0EA5900E5134F /* Episode.swift in Sources */,
+				E3769C4C29D0E8A300E5134F /* Location.swift in Sources */,
 				E3228CD129CFCF210016D5FB /* CharacterDetailViewController.swift in Sources */,
 				E3228CD329CFE6F40016D5FB /* File.swift in Sources */,
 				E3228CA129CE253B0016D5FB /* ViewController.swift in Sources */,

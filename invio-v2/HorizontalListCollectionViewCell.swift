@@ -10,7 +10,7 @@ import UIKit
 class HorizontalListCollectionViewCell: UICollectionViewCell {
     
     
-    var sayi:Int?
+    
     
     @IBOutlet weak var labelLocation: UILabel!
     

@@ -17,14 +17,17 @@ class Character:Codable
     var gender:String?
     var origin:String?
     var location:String?
-    
+    var image:String?
+    var episode:String?
+    var url:String?
+    var created:String?
     
     
     init()
     {
         
     }
-    init(id:Int,name:String,status:String,species:String,type:String,gender:String,origin:String,location:String)
+    init(id:Int,name:String,status:String,species:String,type:String,gender:String,origin:String,location:String,image:String,episode:String,url:String,created:String)
     {
         self.id = id
         self.name = name
@@ -34,6 +37,10 @@ class Character:Codable
         self.gender = gender
         self.origin = origin
         self.location = location
+        self.image = image
+        self.episode = episode
+        self.url = url
+        self.created = created
     }
     
     

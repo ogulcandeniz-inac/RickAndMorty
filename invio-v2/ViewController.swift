@@ -8,6 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    
 
     @IBOutlet weak var ımageViewRickAndMorty: UIImageView!
     @IBOutlet weak var ımageViewTitle: UIImageView!
@@ -41,6 +44,17 @@ class ViewController: UIViewController {
         
         
         
+                
+                
+                
+     
+        
+        
+        
+        
+        
+        
+       
         
         
     }
