@@ -112,24 +112,28 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jpY-ZG-yfd">
-                                                    <rect key="frame" x="81.666666666666671" y="310" width="42" height="31"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4x8-hV-teD">
+                                                    <rect key="frame" x="65" y="309" width="75" height="35"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="31" id="Vqv-tz-gmG"/>
-                                                        <constraint firstAttribute="width" constant="42" id="yZN-R4-5xw"/>
+                                                        <constraint firstAttribute="width" constant="75" id="HBU-ff-K5C"/>
+                                                        <constraint firstAttribute="height" constant="35" id="o3L-5C-293"/>
                                                     </constraints>
-                                                </imageView>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                    <connections>
+                                                        <action selector="buttonpass:" destination="O0s-bu-WHR" eventType="touchUpInside" id="FZ8-6I-hWK"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="jpY-ZG-yfd" firstAttribute="centerX" secondItem="qAH-hh-QkU" secondAttribute="centerX" id="AXG-Do-K6w"/>
+                                                <constraint firstItem="4x8-hV-teD" firstAttribute="centerX" secondItem="qAH-hh-QkU" secondAttribute="centerX" id="6XS-RX-G4c"/>
+                                                <constraint firstItem="4x8-hV-teD" firstAttribute="top" secondItem="7i6-qG-8DK" secondAttribute="bottom" constant="7" id="HsM-Kw-AHe"/>
                                                 <constraint firstItem="7i6-qG-8DK" firstAttribute="centerX" secondItem="qAH-hh-QkU" secondAttribute="centerX" id="flQ-K0-Js0"/>
                                                 <constraint firstAttribute="bottom" secondItem="7i6-qG-8DK" secondAttribute="bottom" constant="50" id="m8F-91-P6l"/>
-                                                <constraint firstAttribute="bottom" secondItem="jpY-ZG-yfd" secondAttribute="bottom" constant="11" id="ojW-tG-2Nr"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="205" height="352"/>
                                         <connections>
-                                            <outlet property="imageViewCharacterGender" destination="jpY-ZG-yfd" id="GCh-Qt-mC0"/>
                                             <outlet property="imageViewCharacterPicture" destination="zHO-xa-82F" id="Ir7-4Z-na2"/>
                                             <outlet property="labelCharacterName" destination="7i6-qG-8DK" id="ijH-Bp-ho9"/>
                                         </connections>

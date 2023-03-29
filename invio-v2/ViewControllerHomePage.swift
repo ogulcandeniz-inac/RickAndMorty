@@ -21,7 +21,8 @@ class ViewControllerHomePage: UIViewController {
         let bilgi = Character(character_id: 1, character_name: "Django", scharacter_tatus: " ", character_species: " ", character_type: " ", character_gender: " ", character_origin: " ", character_location: " ", character_image: "django" , character_episode: " ", character_url: " ", character_created: " ", character_status: " ")
         
         let bilgi2 = Character(character_id: 2, character_name: "interance", scharacter_tatus: " ", character_species: " ", character_type: " ", character_gender: " ", character_origin: " ", character_location: " ", character_image: "inception" , character_episode: " ", character_url: " ", character_created: " ", character_status: " ")
-     
+        
+        
      
         characters.append(bilgi) 
         characters.append(bilgi2)
@@ -49,6 +50,7 @@ class ViewControllerHomePage: UIViewController {
     {
     func sepeteEkle(indexPath: IndexPath) {
         print("Sepete Eklenen Film : \(characters[indexPath.row].character_name!)")
+        self.performSegue(withIdentifier: "characterDetail", sender: characters[indexPath.row])
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1

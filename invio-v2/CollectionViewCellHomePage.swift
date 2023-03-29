@@ -17,17 +17,18 @@ class CollectionViewCellHomePage: UICollectionViewCell {
     
     
     @IBOutlet weak var imageViewCharacterPicture: UIImageView!
-    
     @IBOutlet weak var labelCharacterName: UILabel!
-    
     @IBOutlet weak var imageViewCharacterGender: UIImageView!
     
+    @IBAction func buttonpass(_ sender: Any) {
+        hucreProtocol?.sepeteEkle(indexPath: indexPath!)
+        
+    }
     
     var hucreProtocol:CollectionViewCellHomePageProtocol?
     var indexPath:IndexPath?
     
-    
-    
+        
     
     
 }
