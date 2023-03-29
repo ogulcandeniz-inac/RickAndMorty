@@ -16,14 +16,19 @@ class Location:Codable
     var location_dinemsion:String?
     var location_resident:String?
     var location_url:String?
-    
+    var location_created:String?
     init() {
         
     }
     
-    init(location_id:Int,location_name:String)
+    init(location_id:Int,location_name:String,location_type:String,location_dinemsion:String,location_resident:String, location_url:String,location_created:String)
     {
         self.location_id = location_id
         self.location_name = location_name
+        self.location_type = location_type
+        self.location_dinemsion = location_dinemsion
+        self.location_resident = location_resident
+        self.location_url = location_url
+        self.location_created = location_created
     }
 }

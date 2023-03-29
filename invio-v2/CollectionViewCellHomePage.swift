@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol CollectionViewCellHomePageProtocol
+
+{
+    func sepeteEkle(indexPath:IndexPath)
+}
+
 class CollectionViewCellHomePage: UICollectionViewCell {
     
     
@@ -15,4 +21,13 @@ class CollectionViewCellHomePage: UICollectionViewCell {
     @IBOutlet weak var labelCharacterName: UILabel!
     
     @IBOutlet weak var imageViewCharacterGender: UIImageView!
+    
+    
+    var hucreProtocol:CollectionViewCellHomePageProtocol?
+    var indexPath:IndexPath?
+    
+    
+    
+    
+    
 }
