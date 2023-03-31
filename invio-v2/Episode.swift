@@ -18,19 +18,13 @@ class Episode:Codable
     var episode_url:String?
     var episode_created:String?
     
-    init() {
-        
-    }
-    
-    init(episode_id:Int,episode_name:String,episode_date:String,episode:String,episode_character:String,episode_url:String,episode_created:String)
-    {
+    init(episode_id: Int? = nil, episode_name: String? = nil, episode_date: String? = nil, episode: String? = nil, episode_character: String? = nil, episode_url: String? = nil, episode_created: String? = nil) {
         self.episode_id = episode_id
         self.episode_name = episode_name
         self.episode_date = episode_date
         self.episode = episode
         self.episode_character = episode_character
-        self.episode_created = episode_created
         self.episode_url = episode_url
-       
+        self.episode_created = episode_created
     }
 }

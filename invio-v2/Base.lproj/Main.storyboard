@@ -113,21 +113,32 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4x8-hV-teD">
-                                                    <rect key="frame" x="65" y="309" width="75" height="35"/>
+                                                    <rect key="frame" x="29" y="309" width="147" height="38.666666666666686"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="75" id="HBU-ff-K5C"/>
-                                                        <constraint firstAttribute="height" constant="35" id="o3L-5C-293"/>
+                                                        <constraint firstAttribute="width" constant="147" id="8OA-YQ-aJc"/>
+                                                        <constraint firstAttribute="height" constant="38.670000000000002" id="G1E-fo-tVL"/>
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain">
+                                                        <attributedString key="attributedTitle">
+                                                            <fragment content="Karakter Detay">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="18" name="AvenirNext-Medium"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                    </buttonConfiguration>
                                                     <connections>
                                                         <action selector="buttonpass:" destination="O0s-bu-WHR" eventType="touchUpInside" id="FZ8-6I-hWK"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="4x8-hV-teD" firstAttribute="centerX" secondItem="qAH-hh-QkU" secondAttribute="centerX" id="6XS-RX-G4c"/>
+                                                <constraint firstItem="4x8-hV-teD" firstAttribute="centerX" secondItem="qAH-hh-QkU" secondAttribute="centerX" id="3EI-8H-6g6"/>
                                                 <constraint firstItem="4x8-hV-teD" firstAttribute="top" secondItem="7i6-qG-8DK" secondAttribute="bottom" constant="7" id="HsM-Kw-AHe"/>
+                                                <constraint firstItem="4x8-hV-teD" firstAttribute="centerX" secondItem="qAH-hh-QkU" secondAttribute="centerX" id="NSu-Tf-prW"/>
+                                                <constraint firstItem="4x8-hV-teD" firstAttribute="top" secondItem="7i6-qG-8DK" secondAttribute="bottom" constant="7" id="fDb-cY-N0Y"/>
                                                 <constraint firstItem="7i6-qG-8DK" firstAttribute="centerX" secondItem="qAH-hh-QkU" secondAttribute="centerX" id="flQ-K0-Js0"/>
                                                 <constraint firstAttribute="bottom" secondItem="7i6-qG-8DK" secondAttribute="bottom" constant="50" id="m8F-91-P6l"/>
                                             </constraints>

@@ -8,7 +8,7 @@
 import UIKit
 
 class CharacterDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var imageViewCharacterPicture: UIImageView!
     
     
@@ -21,20 +21,24 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var labelCreated: UILabel!
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    var film:Character?
     override func viewDidLoad(){
         super.viewDidLoad()
-
-  
+        
+        
+        
+        if let f = film {
+            
+            if let url = URL(string: "https://rickandmortyapi.com/api/character/avatar/\(f.image!)"){
+                DispatchQueue.global().async {
+                    let data = try? Data(contentsOf: url)
+                    
+                    DispatchQueue.main.async {
+                        self.imageViewCharacterPicture.image = UIImage(data: data!)
+                    }
+                }
+            }
+            
+        }
     }
 }

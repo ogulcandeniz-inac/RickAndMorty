@@ -12,24 +12,19 @@ class ViewControllerHomePage: UIViewController {
     
     @IBOutlet weak var CollectionViewCharacter: UICollectionView!
     var characters = [Character]()
+    var characterscell: Character?
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.setHidesBackButton(true, animated:true);
         
-        let bilgi = Character(character_id: 1, character_name: "Django", scharacter_tatus: " ", character_species: " ", character_type: " ", character_gender: " ", character_origin: " ", character_location: " ", character_image: "django" , character_episode: " ", character_url: " ", character_created: " ", character_status: " ")
-        
-        let bilgi2 = Character(character_id: 2, character_name: "interance", scharacter_tatus: " ", character_species: " ", character_type: " ", character_gender: " ", character_origin: " ", character_location: " ", character_image: "inception" , character_episode: " ", character_url: " ", character_created: " ", character_status: " ")
-        
-        
-     
-        characters.append(bilgi) 
-        characters.append(bilgi2)
-        
         CollectionViewCharacter.delegate = self
         CollectionViewCharacter.dataSource = self
-          
+        tumKategorilerAl()
+        
         let design :UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let width = self.CollectionViewCharacter.frame.size.width
         design.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -39,40 +34,148 @@ class ViewControllerHomePage: UIViewController {
         design.minimumLineSpacing = 10
         CollectionViewCharacter.collectionViewLayout = design
         
+       
+       /* if let k = characterscell {
+            
+            if let kid = k.id{
+                navigationItem.title = k.name
+                filmlerByKategoriID(id:kid)
+            }
+        }*/
+    }
+        
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let indeks = sender as? Int
+        
+        let gidilecekVC = segue.destination as! CharacterDetailViewController
+        gidilecekVC.film = characters[indeks!]
+    }
+    
+    /*
+        func filmlerByKategoriID(id:Int){
+            var request = URLRequest(url: URL(string: "https://rickandmortyapi.com/api/character")!)
+            
+            request.httpMethod = "POST"
+            let postString = "id=\(id)"
+            request.httpBody = postString.data(using: .utf8)
+            
+            URLSession.shared.dataTask(with: request) { data , response , error in
+                if error != nil || data == nil {
+                    print("Hata")
+                    return
+                }
+                
+                do{
+                    let cevap = try JSONDecoder().decode(CharacterReply.self, from: data!)
+                    if let gelenFilmlListesi = cevap.results {
+                        self.characters = gelenFilmlListesi
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.CollectionViewCharacter.reloadData()
+                    }
+                    
+                }catch{
+                    print(error.localizedDescription)
+                }
+            }.resume()
+     */
+            
+            
+            
+        
+        
+        
+        
+        func tumKategorilerAl(){
+            let url = URL(string: "https://rickandmortyapi.com/api/character")!
+            print("okudu1")
+            URLSession.shared.dataTask(with: url) { data , response , error in
+                if error != nil || data == nil {
+                    print("Hata")
+                    print("okudu2")
+                    return
+                    
+                }
+                
+                do{
+                    let cevap = try JSONDecoder().decode(CharacterReply.self, from: data!)
+                    if let gelenKategoriListesi = cevap.results {
+                        self.characters = gelenKategoriListesi
+                        print("okudu3")
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.CollectionViewCharacter.reloadData()
+                        print("okudu4")
+                    }
+                    
+                }catch{
+                    print(error.localizedDescription)
+                    print("okudu5")
+                }
+            }.resume()
+        }
         
     }
-}
 
-
-
-
-    extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSource,CollectionViewCellHomePageProtocol
-    {
-    func sepeteEkle(indexPath: IndexPath) {
-        print("Sepete Eklenen Film : \(characters[indexPath.row].character_name!)")
-        self.performSegue(withIdentifier: "characterDetail", sender: characters[indexPath.row])
-    }
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return characters.count
-    }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let charac = characters[indexPath.row]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell", for: indexPath) as! CollectionViewCellHomePage
+    
+    
+    
+    
+    
+         
+    
         
 
-        cell.labelCharacterName.text = charac.character_name
-        cell.imageViewCharacterPicture.image = UIImage(named: charac.character_image!)
-        cell.layer.borderColor = UIColor.lightGray.cgColor
-        cell.layer.borderWidth = 0.5
-        cell.hucreProtocol = self
-        cell.indexPath = indexPath
-        return cell
-        
-    }
-        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            self.performSegue(withIdentifier: "characterDetail", sender: indexPath.row)}
-}
+
+    
+        extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSource,CollectionViewCellHomePageProtocol
+        {
+            func sepeteEkle(indexPath: IndexPath) {
+                print("Sepete Eklenen Film : \(characters[indexPath.row].name!)")
+                self.performSegue(withIdentifier: "characterDetail", sender: characters[indexPath.row])
+            }
+            func numberOfSections(in collectionView: UICollectionView) -> Int {
+                return 1
+            }
+            func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+                return characters.count
+            }
+            func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+                
+                let charac = characters[indexPath.row]
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell", for: indexPath) as! CollectionViewCellHomePage
+                
+                
+                cell.labelCharacterName.text = charac.name
+                
+                
+                
+                if let url = URL(string: "https://rickandmortyapi.com/api/character/avatar/\(charac.image!)"){
+                    DispatchQueue.global().async {
+                        let data = try? Data(contentsOf: url)
+                        
+                        DispatchQueue.main.async {
+                            cell.imageViewCharacterPicture.image = UIImage(data: data!)
+                        }
+                    }
+                }
+                
+                
+                
+                
+                cell.imageViewCharacterPicture.image = UIImage(named: charac.image!)
+                cell.layer.borderColor = UIColor.lightGray.cgColor
+                cell.layer.borderWidth = 0.5
+                
+                cell.hucreProtocol = self
+                cell.indexPath = indexPath
+                
+                return cell
+            }
+            func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+                self.performSegue(withIdentifier: "characterDetail", sender: indexPath.row)}
+        }
+ 
