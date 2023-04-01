@@ -100,12 +100,16 @@ class ViewControllerHomePage: UIViewController {
                 }
                 
                 do{
-                    let cevap = try JSONDecoder().decode(CharacterReply.self, from: data!)
-                    if let gelenKategoriListesi = cevap.results {
-                        self.characters = gelenKategoriListesi
+                    let cevap = try JSONDecoder().decode(CharacterResponse.self, from: data!)
+
                         print("okudu3")
-                    }
+                        print(cevap.results)
+                        
+                    let gelenKategoriListesi = cevap.results
+                        self.characters = gelenKategoriListesi
                     
+                        
+
                     DispatchQueue.main.async {
                         self.CollectionViewCharacter.reloadData()
                         print("okudu4")
@@ -134,7 +138,7 @@ class ViewControllerHomePage: UIViewController {
         extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSource,CollectionViewCellHomePageProtocol
         {
             func sepeteEkle(indexPath: IndexPath) {
-                print("Sepete Eklenen Film : \(characters[indexPath.row].name!)")
+               // print("Sepete Eklenen Film : \(characters[indexPath.row].name!)")
                 self.performSegue(withIdentifier: "characterDetail", sender: characters[indexPath.row])
             }
             func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -145,28 +149,28 @@ class ViewControllerHomePage: UIViewController {
             }
             func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
                 
-                let charac = characters[indexPath.row]
+                _ = characters[indexPath.row]
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell", for: indexPath) as! CollectionViewCellHomePage
                 
                 
-                cell.labelCharacterName.text = charac.name
+                //cell.labelCharacterName.text = charac.name
                 
                 
                 
-                if let url = URL(string: "https://rickandmortyapi.com/api/character/avatar/\(charac.image!)"){
-                    DispatchQueue.global().async {
-                        let data = try? Data(contentsOf: url)
-                        
-                        DispatchQueue.main.async {
-                            cell.imageViewCharacterPicture.image = UIImage(data: data!)
-                        }
-                    }
-                }
+//                if let url = URL(string: "https://rickandmortyapi.com/api/character/avatar/\(charac.image!)"){
+//                    DispatchQueue.global().async {
+//                        let data = try? Data(contentsOf: url)
+//
+//                        DispatchQueue.main.async {
+//                            cell.imageViewCharacterPicture.image = UIImage(data: data!)
+//                        }
+//                    }
+//                }
                 
                 
                 
                 
-                cell.imageViewCharacterPicture.image = UIImage(named: charac.image!)
+                //cell.imageViewCharacterPicture.image = UIImage(named: charac.image!)
                 cell.layer.borderColor = UIColor.lightGray.cgColor
                 cell.layer.borderWidth = 0.5
                 

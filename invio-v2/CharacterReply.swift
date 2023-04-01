@@ -9,11 +9,5 @@ import Foundation
 
 
 
-
-class CharacterReply:Codable{
-    var results:[Character]?
-}
-
-
-
+ 
 
