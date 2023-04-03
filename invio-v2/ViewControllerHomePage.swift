@@ -109,8 +109,10 @@ class ViewControllerHomePage: UIViewController {
         extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSource,CollectionViewCellHomePageProtocol
 {
             func sepeteEkle(indexPath: IndexPath) {
-                // print("Sepete Eklenen Film : \(characters[indexPath.row].name!)")
+                print("Detayı Görülmek İstenen Kişi : \(characters[indexPath.row].name)")
+                
                 self.performSegue(withIdentifier: "characterDetail", sender: characters[indexPath.row])
+                
             }
             func numberOfSections(in collectionView: UICollectionView) -> Int {
                 return 1
@@ -129,19 +131,19 @@ class ViewControllerHomePage: UIViewController {
                 cell.labelCharacterName.text = film.name
                 
                 
-                //
                 
                 
-                if let url = URL(string: "https://rickandmortyapi.com/api/character/avatar\(film.image)")
+                if let url = URL(string: "https://rickandmortyapi.com/api/character/avatar/\(film.id).jpeg")
                     
                 {
+                    print("okudu5")
+                    
                     URLSession.shared.dataTask(with: url) { data , response , error in
                         DispatchQueue.global().async {
                             let data = try? Data(contentsOf: url)
                             
                             
-                            
-                            
+                          
                             DispatchQueue.main.async {
                                 
                                
@@ -170,9 +172,7 @@ class ViewControllerHomePage: UIViewController {
                         
                         return cell
                     }
-                    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-                        self.performSegue(withIdentifier: "characterDetail", sender: indexPath.row)}
-                }
+                    }
                 
             
         

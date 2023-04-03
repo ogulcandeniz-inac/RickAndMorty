@@ -20,28 +20,30 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet weak var labelEpisodes: UILabel!
     @IBOutlet weak var labelCreated: UILabel!
     
-    
+    var characters = [Character]()
     var film:Character?
+   
     override func viewDidLoad(){
         super.viewDidLoad()
         
-        
-        
+       
+       
         if let f = film {
             
-            if let url = URL(string: "https://rickandmortyapi.com/api/character/avatar/\(f.image)"){
+            if let url = URL(string: "https://rickandmortyapi.com/api/character/avatar/\(f.id).jpeg"){
                 DispatchQueue.global().async {
                     let data = try? Data(contentsOf: url)
                     
                     DispatchQueue.main.async {
+                       
                         self.imageViewCharacterPicture.image = UIImage(data: data!)
+                        self.imageViewCharacterPicture.image = UIImage(named: f.image)
                     }
                 }
             }
             
             
-            labelStatus.text = f.name
-            labelSpecy.text = f.type
+            self.labelOrgin.text = f.name
           
             
             
@@ -49,4 +51,9 @@ class CharacterDetailViewController: UIViewController {
             
         }
     }
+    
+    
+    
+    
+    
 }
