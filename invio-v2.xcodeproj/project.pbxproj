@@ -27,6 +27,7 @@
 		E3432CF129D53FE50078D742 /* CharacterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3432CF029D53FE50078D742 /* CharacterStatus.swift */; };
 		E3432CF329D540640078D742 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3432CF229D540640078D742 /* Gender.swift */; };
 		E3432CF529D540FB0078D742 /* DevelopLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3432CF429D540FB0078D742 /* DevelopLocation.swift */; };
+		E34B5AC129DCE32C00D52506 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E34B5AC029DCE32C00D52506 /* Kingfisher */; };
 		E3769C4C29D0E8A300E5134F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3769C4B29D0E8A300E5134F /* Location.swift */; };
 		E3769C4E29D0EA5900E5134F /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3769C4D29D0EA5900E5134F /* Episode.swift */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		E3432CF029D53FE50078D742 /* CharacterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatus.swift; sourceTree = "<group>"; };
 		E3432CF229D540640078D742 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		E3432CF429D540FB0078D742 /* DevelopLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopLocation.swift; sourceTree = "<group>"; };
+		E34B5ABE29DCE20900D52506 /* Kingfisher */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Kingfisher; path = "../../../Library/Developer/Xcode/DerivedData/invio-v2-ajtobpctorjunoerrudisqfwmoez/SourcePackages/checkouts/Kingfisher"; sourceTree = "<group>"; };
 		E3769C4B29D0E8A300E5134F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		E3769C4D29D0EA5900E5134F /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E34B5AC129DCE32C00D52506 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +163,7 @@
 		E3228CBC29CE253F0016D5FB /* invio-v2UITests */ = {
 			isa = PBXGroup;
 			children = (
+				E34B5ABE29DCE20900D52506 /* Kingfisher */,
 				E3228CBD29CE253F0016D5FB /* invio_v2UITests.swift */,
 				E3228CBF29CE253F0016D5FB /* invio_v2UITestsLaunchTests.swift */,
 			);
@@ -182,6 +186,9 @@
 			dependencies = (
 			);
 			name = "invio-v2";
+			packageProductDependencies = (
+				E34B5AC029DCE32C00D52506 /* Kingfisher */,
+			);
 			productName = "invio-v2";
 			productReference = E3228C9929CE253B0016D5FB /* invio-v2.app */;
 			productType = "com.apple.product-type.application";
@@ -254,6 +261,9 @@
 				Base,
 			);
 			mainGroup = E3228C9029CE253B0016D5FB;
+			packageReferences = (
+				E34B5ABF29DCE32C00D52506 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = E3228C9A29CE253B0016D5FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -648,6 +658,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E34B5ABF29DCE32C00D52506 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E34B5AC029DCE32C00D52506 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E34B5ABF29DCE32C00D52506 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E3228C9129CE253B0016D5FB /* Project object */;
 }

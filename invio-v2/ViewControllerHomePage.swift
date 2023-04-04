@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ViewControllerHomePage: UIViewController {
     
-    
+    let characterId = "sa"
     @IBOutlet weak var CollectionViewCharacter: UICollectionView!
     var characters = [Character]()
     var characterscell: Character?
@@ -36,76 +37,68 @@ class ViewControllerHomePage: UIViewController {
         design.minimumLineSpacing = 10
         CollectionViewCharacter.collectionViewLayout = design
         
-    /*
-        if let k = characterscell {
-            
-            if let kid = k.id{
-               
-                filmlerByKategoriID(id:kid)
-            }
-        }
-      */
+        
+        /*
+         if let k = characterscell {
+         
+         if let kid = k.id{
+         
+         filmlerByKategoriID(id:kid)
+         }
+         }
+         */
         
         
         
         
     }
-        
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let indeks = sender as? Int
-        
-  
-        let gidilecekVC = segue.destination as! CharacterDetailViewController
-        gidilecekVC.film = characters[indeks!]
-        
+    
+/*
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     let indeks = sender as? Int
+     let gidilecekVC = segue.destination as! CharacterDetailViewController
+//     gidilecekVC.film = characters[indeks!]
+         
+         _ = characterId
      
-        
-        
+     }
+*/
     
-    }
-    */
-        
     
-        
-        func tumKategorilerAl(){
-            let url = URL(string: "https://rickandmortyapi.com/api/character")!
-            print("okudu1")
-            URLSession.shared.dataTask(with: url) { data , response , error in
-                if error != nil || data == nil {
-                    print("Hata")
-                    print("okudu2")
-                    return
-                    
+    func tumKategorilerAl(){
+        let url = URL(string: "https://rickandmortyapi.com/api/character")!
+        print("okudu1")
+        URLSession.shared.dataTask(with: url) { data , response , error in
+            if error != nil || data == nil {
+                print("Hata")
+                print("okudu2")
+                return
+                
+            }
+            
+            do{
+                let cevap = try JSONDecoder().decode(CharacterResponse.self, from: data!)
+                
+                print(cevap.results)
+                let gelenKategoriListesi = cevap.results
+                self.characters = gelenKategoriListesi
+
+                
+                DispatchQueue.main.async {
+                    self.CollectionViewCharacter.reloadData()
                 }
                 
-                do{
-                    let cevap = try JSONDecoder().decode(CharacterResponse.self, from: data!)
-
-                        print("okudu3")
-                        print(cevap.results)
-                        
-                    let gelenKategoriListesi = cevap.results
-                        self.characters = gelenKategoriListesi
-                        
-                        
-
-                    DispatchQueue.main.async {
-                        self.CollectionViewCharacter.reloadData()
-                        print("okudu4")
-                    }
-                    
-                }catch{
-                    print(error.localizedDescription)
-                    print("okudu5")
-                }
-            }.resume()
-        }
-        
+            }catch{
+                print(error.localizedDescription)
+            }
+        }.resume()
     }
+    
+}
 
-    
-    
+
+
+
         extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSource,CollectionViewCellHomePageProtocol
 {
             func sepeteEkle(indexPath: IndexPath) {
@@ -128,51 +121,22 @@ class ViewControllerHomePage: UIViewController {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell", for: indexPath) as! CollectionViewCellHomePage
                 
                 
-                cell.labelCharacterName.text = film.name
-                
-                
-                
-                
-                if let url = URL(string: "https://rickandmortyapi.com/api/character/avatar/\(film.id).jpeg")
-                    
-                {
-                    print("okudu5")
-                    
-                    URLSession.shared.dataTask(with: url) { data , response , error in
-                        DispatchQueue.global().async {
-                            let data = try? Data(contentsOf: url)
-                            
-                            
-                          
-                            DispatchQueue.main.async {
+        cell.labelCharacterName.text = film.name
+                        
+        // Load the character's image using Kingfisher
+        let imageUrlString = characters[indexPath.row].image
+        let imageUrl = URL(string: imageUrlString)!
+        cell.imageViewCharacterPicture.kf.setImage(with: imageUrl)
                                 
-                               
-                                cell.imageViewCharacterPicture.image = UIImage(named: film.image)
-                                cell.imageViewCharacterPicture.image = UIImage(data: data!)
                                 
-                            }
-                        }
-                    }
-                }
-                    
-                 
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.layer.borderWidth = 0.5
+        cell.hucreProtocol = self
+        cell.indexPath = indexPath
+                                
+        return cell
+        }
+        }
                         
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        cell.layer.borderColor = UIColor.lightGray.cgColor
-                        cell.layer.borderWidth = 0.5
-                        
-                        cell.hucreProtocol = self
-                        cell.indexPath = indexPath
-                        
-                        return cell
-                    }
-                    }
                 
-            
         
