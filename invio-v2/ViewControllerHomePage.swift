@@ -15,7 +15,7 @@ class ViewControllerHomePage: UIViewController {
     var characters = [Character]()
     var characterscell: Character?
     var film:Character?
-    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,16 +53,19 @@ class ViewControllerHomePage: UIViewController {
         
     }
     
-/*
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     let indeks = sender as? Int
-     let gidilecekVC = segue.destination as! CharacterDetailViewController
-//     gidilecekVC.film = characters[indeks!]
-         
-         _ = characterId
-     
-     }
-*/
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CharacterDetailViewController" {
+            if let indexPath = collectionView.indexPathsForSelectedItems?.first {
+                let selectedCharacter = characters[indexPath.row]
+                let characterDetailVC = segue.destination as! CharacterDetailViewController
+                characterDetailVC.character = selectedCharacter
+            }
+        }
+    }
+
+    
+    
     
     
     func tumKategorilerAl(){
@@ -107,6 +110,7 @@ class ViewControllerHomePage: UIViewController {
                 self.performSegue(withIdentifier: "characterDetail", sender: characters[indexPath.row])
                 
             }
+            
             func numberOfSections(in collectionView: UICollectionView) -> Int {
                 return 1
             }
