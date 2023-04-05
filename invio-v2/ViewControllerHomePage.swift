@@ -55,14 +55,18 @@ class ViewControllerHomePage: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "CharacterDetailViewController" {
-            if let indexPath = collectionView.indexPathsForSelectedItems?.first {
-                let selectedCharacter = characters[indexPath.row]
-                let characterDetailVC = segue.destination as! CharacterDetailViewController
-                characterDetailVC.character = selectedCharacter
-            }
+        
+       
+        if let navigationController = sender as? UINavigationController,
+           let homePageVC = navigationController.topViewController as? ViewControllerHomePage,
+           let indexPath = homePageVC.collectionView.indexPathsForSelectedItems?.first {
+            let selectedCharacter = characters[indexPath.row]
+            let characterDetailVC = segue.destination as! CharacterDetailViewController
+            characterDetailVC.character = selectedCharacter
         }
     }
+
+    
 
     
     
