@@ -109,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				E3228C9B29CE253B0016D5FB /* invio-v2 */,
+				E3BE1AE829DE932200A2AE08 /* View */,
+				E3BE1AE929DE938200A2AE08 /* New Group */,
 				E3228CB229CE253F0016D5FB /* invio-v2Tests */,
 				E3228CBC29CE253F0016D5FB /* invio-v2UITests */,
 				E3228C9A29CE253B0016D5FB /* Products */,
@@ -130,21 +132,8 @@
 			children = (
 				E3228C9C29CE253B0016D5FB /* AppDelegate.swift */,
 				E3228C9E29CE253B0016D5FB /* SceneDelegate.swift */,
-				E3228CA029CE253B0016D5FB /* ViewController.swift */,
-				E3228CD029CFCF210016D5FB /* CharacterDetailViewController.swift */,
-				E3228CCC29CE34A20016D5FB /* ViewControllerHomePage.swift */,
-				E3228CCE29CE84F00016D5FB /* CollectionViewCellHomePage.swift */,
 				E3228CA229CE253B0016D5FB /* Main.storyboard */,
-				E3228CD829CFF2E20016D5FB /* HorizontalListCollectionViewCell.swift */,
 				E3228CD229CFE6F40016D5FB /* File.swift */,
-				E3228CD429CFE7160016D5FB /* Character.swift */,
-				E3432CF229D540640078D742 /* Gender.swift */,
-				E3432CF029D53FE50078D742 /* CharacterStatus.swift */,
-				E3432CEE29D53F290078D742 /* Origin.swift */,
-				E3769C4B29D0E8A300E5134F /* Location.swift */,
-				E3432CF429D540FB0078D742 /* DevelopLocation.swift */,
-				E3769C4D29D0EA5900E5134F /* Episode.swift */,
-				E3228CD629CFEA650016D5FB /* CharacterReply.swift */,
 				E3228CA529CE253F0016D5FB /* Assets.xcassets */,
 				E3228CA729CE253F0016D5FB /* LaunchScreen.storyboard */,
 				E3228CAA29CE253F0016D5FB /* Info.plist */,
@@ -168,6 +157,33 @@
 				E3228CBF29CE253F0016D5FB /* invio_v2UITestsLaunchTests.swift */,
 			);
 			path = "invio-v2UITests";
+			sourceTree = "<group>";
+		};
+		E3BE1AE829DE932200A2AE08 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E3228CA029CE253B0016D5FB /* ViewController.swift */,
+				E3228CCE29CE84F00016D5FB /* CollectionViewCellHomePage.swift */,
+				E3228CD829CFF2E20016D5FB /* HorizontalListCollectionViewCell.swift */,
+				E3228CD029CFCF210016D5FB /* CharacterDetailViewController.swift */,
+				E3228CCC29CE34A20016D5FB /* ViewControllerHomePage.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E3BE1AE929DE938200A2AE08 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				E3228CD429CFE7160016D5FB /* Character.swift */,
+				E3432CF229D540640078D742 /* Gender.swift */,
+				E3432CF029D53FE50078D742 /* CharacterStatus.swift */,
+				E3432CEE29D53F290078D742 /* Origin.swift */,
+				E3769C4B29D0E8A300E5134F /* Location.swift */,
+				E3432CF429D540FB0078D742 /* DevelopLocation.swift */,
+				E3769C4D29D0EA5900E5134F /* Episode.swift */,
+				E3228CD629CFEA650016D5FB /* CharacterReply.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
