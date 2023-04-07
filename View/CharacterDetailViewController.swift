@@ -22,29 +22,25 @@ class CharacterDetailViewController: UIViewController {
     
     var film:Character?
      
-    var characterId: Int?
+    var characterId: Int = 1
     var characters: [Character] = []
+    var selectedCharacter: Character?
     
     override func viewDidLoad(){
         super.viewDidLoad()
         
     
-       
+        print(characterId as Any,"deger")
+        
+        
         if let selectedCharacter = characters.first(where: { $0.id == characterId }) {
             labelStatus.text = selectedCharacter.status.rawValue
-
+           
                } else {
                    labelStatus.text = "Hata"
+                   print("hatalı deger")
                }
         
-        if let characterId = characterId, let selectedCharacter = characters.first(where: { $0.id == characterId }) {
-            // characterId değeri nil değilse ve selectedCharacter bulunmuşsa burası çalışır
-            imageViewCharacterPicture.image = UIImage(named: selectedCharacter.image)
-        } else {
-            // characterId değeri nil ise veya selectedCharacter bulunamamışsa burası çalışır
-            print("Error: Character not found.")
-            
-        }
 
     }
 }

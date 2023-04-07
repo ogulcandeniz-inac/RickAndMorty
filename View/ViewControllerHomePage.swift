@@ -10,7 +10,7 @@ import Kingfisher
 
 class ViewControllerHomePage: UIViewController {
     
-    let characterId = "sa"
+    var characterId: Int = 1
     @IBOutlet weak var CollectionViewCharacter: UICollectionView!
     var characters = [Character]()
     var characterscell: Character?
@@ -25,7 +25,7 @@ class ViewControllerHomePage: UIViewController {
         CollectionViewCharacter.dataSource = self
  
         tumKategorilerAl()
-        
+        print(self.characters,"deger")
         let design :UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let width = self.CollectionViewCharacter.frame.size.width
         design.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -34,6 +34,9 @@ class ViewControllerHomePage: UIViewController {
         design.minimumInteritemSpacing = 10
         design.minimumLineSpacing = 10
         CollectionViewCharacter.collectionViewLayout = design
+        
+        
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -60,11 +63,15 @@ class ViewControllerHomePage: UIViewController {
             
             do{
                 let cevap = try JSONDecoder().decode(CharacterResponse.self, from: data!)
+                
                 print(cevap.results)
                 let gelenKategoriListesi = cevap.results
                 self.characters = gelenKategoriListesi
+
+                print(self.characters,"deger")
                 DispatchQueue.main.async {
-                self.CollectionViewCharacter.reloadData()
+                    self.characters = gelenKategoriListesi
+                    self.CollectionViewCharacter.reloadData()
                 }
                 
             }catch{
@@ -89,10 +96,14 @@ class ViewControllerHomePage: UIViewController {
             func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
                 return characters.count
             }
+          
             func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
                 let film = characters[indexPath.row]
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell", for: indexPath) as! CollectionViewCellHomePage
            
+            
+                
+                
         cell.labelCharacterName.text = film.name
         // Load the character's image using Kingfisher
         let imageUrlString = characters[indexPath.row].image
