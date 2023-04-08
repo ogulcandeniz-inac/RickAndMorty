@@ -26,7 +26,8 @@ struct Character: Codable {
     let species: Species
     let type: String
     let gender: Gender
-    let origin, location: Location
+    let origin: Location
+    let location: Location
     let image: String
     let episode: [String]
     let url: String

@@ -57,23 +57,15 @@ class ViewControllerHomePage: UIViewController {
             if error != nil || data == nil {
                 print("Hata")
                 print("okudu2")
-                return
-                
-            }
-            
+                return}
             do{
                 let cevap = try JSONDecoder().decode(CharacterResponse.self, from: data!)
-                
-                print(cevap.results)
                 let gelenKategoriListesi = cevap.results
                 self.characters = gelenKategoriListesi
-
-                print(self.characters,"deger")
                 DispatchQueue.main.async {
                     self.characters = gelenKategoriListesi
                     self.CollectionViewCharacter.reloadData()
                 }
-                
             }catch{
                 print(error.localizedDescription)
             }
