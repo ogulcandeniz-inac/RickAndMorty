@@ -26,7 +26,7 @@ struct Character: Codable {
     let species: Species
     let type: String
     let gender: Gender
-    let origin: Location
+    let origin: Originn
     let location: Location
     let image: String
     let episode: [String]
@@ -83,4 +83,8 @@ class JSONNull: Codable, Hashable {
         var container = encoder.singleValueContainer()
         try container.encodeNil()
     }
+}
+struct Originn: Codable {
+    let name: String
+    let url: String
 }

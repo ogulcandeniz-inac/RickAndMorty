@@ -71,7 +71,6 @@ class ViewControllerHomePage: UIViewController {
             }
         }.resume()
     }
-    
 }
 
 

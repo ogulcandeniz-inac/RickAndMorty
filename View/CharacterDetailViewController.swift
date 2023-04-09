@@ -30,18 +30,10 @@ class CharacterDetailViewController: UIViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        
-    
-        print(characterId as Any,"deger")
         tumKategorilerAl()
-        
-        
-        
-        
-    }
+        }
     
-    
-    
+
     func tumKategorilerAl(){
         let url = URL(string: "https://rickandmortyapi.com/api/character")!
         URLSession.shared.dataTask(with: url) { data , response , error in
@@ -55,7 +47,6 @@ class CharacterDetailViewController: UIViewController {
 
                 DispatchQueue.main.async { [self] in
                     self.characters = gelenKategoriListesi
-                    
                     if let character = self.characters.first(where: { $0.id == characterId }) {
                     self.labelStatus.text = character.status.rawValue
                     self.labelSpecy.text = character.species.rawValue
@@ -64,7 +55,7 @@ class CharacterDetailViewController: UIViewController {
                     self.labelLocation.text = character.location.name
                         
                     for episodeURL in character.episode
-                    {
+                     {
                       let components = episodeURL.components(separatedBy: "/")
                       let episodeID = components.last ?? ""
                       episodeIDs.append(episodeID)
@@ -73,12 +64,8 @@ class CharacterDetailViewController: UIViewController {
                     let episodeString = episodeIDs.joined(separator: ", ")
                     self.labelEpisodes.text = episodeString
                     self.labelCreated.text = character.created
-                    
-                        let imageUrl = URL(string: character.image)
-                        imageViewCharacterPicture.kf.setImage(with: imageUrl)
-                        
-                        
-                    
+                    let imageUrl = URL(string: character.image)
+                    imageViewCharacterPicture.kf.setImage(with: imageUrl)
                     }
                 }
             }catch{
@@ -86,12 +73,4 @@ class CharacterDetailViewController: UIViewController {
             }
         }.resume()
     }
-
-    
-    
-    
-    
-    
-    
-    
 }
