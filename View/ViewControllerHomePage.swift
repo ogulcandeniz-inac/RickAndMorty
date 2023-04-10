@@ -12,6 +12,7 @@ class ViewControllerHomePage: UIViewController {
     
     var characterId: Int = 1
     @IBOutlet weak var CollectionViewCharacter: UICollectionView!
+    
     var characters = [Character]()
     var characterscell: Character?
     var film:Character?

@@ -20,6 +20,7 @@ class CollectionViewCellHomePage: UICollectionViewCell {
     @IBOutlet weak var labelCharacterName: UILabel!
     @IBOutlet weak var imageViewCharacterGender: UIImageView!
     
+    @IBOutlet weak var genderrImageView: UIImageView!
     @IBAction func buttonpass(_ sender: Any) {
         hucreProtocol?.sepeteEkle(indexPath: indexPath!)
         
