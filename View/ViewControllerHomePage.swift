@@ -60,6 +60,7 @@ class ViewControllerHomePage: UIViewController {
             if error != nil || data == nil {
                 print("Hata")
                 print("okudu2")
+                print("okudu3")
                 return}
             do{
                 let cevap = try JSONDecoder().decode(CharacterResponse.self, from: data!)
@@ -83,7 +84,7 @@ class ViewControllerHomePage: UIViewController {
                 let selectedCharacter = characters[indexPath.row]
                 print("Detayı Görülmek İstenen Kişi: \(selectedCharacter.name), ID: \(selectedCharacter.id)")
                 self.performSegue(withIdentifier: "characterDetail", sender: selectedCharacter.id)
-                
+                print("okudu3")
             }
             func numberOfSections(in collectionView: UICollectionView) -> Int {
                 return 1
