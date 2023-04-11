@@ -11,8 +11,8 @@ import Kingfisher
 class ViewControllerHomePage: UIViewController {
     
     @IBOutlet weak var rickAndMortyImmageView: UIImageView!
-    
     @IBOutlet weak var CollectionViewCharacter: UICollectionView!
+    
     var characterId: Int = 1
     var characters = [Character]()
     var characterscell: Character?
@@ -37,9 +37,7 @@ class ViewControllerHomePage: UIViewController {
         design.minimumLineSpacing = 10
         CollectionViewCharacter.collectionViewLayout = design
         
-        
-        
-        
+   
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -59,51 +57,40 @@ class ViewControllerHomePage: UIViewController {
         URLSession.shared.dataTask(with: url) { data , response , error in
             if error != nil || data == nil {
                 print("Hata")
-                print("okudu2")
-                print("okudu3")
                 return}
             do{
                 let cevap = try JSONDecoder().decode(CharacterResponse.self, from: data!)
                 let gelenKategoriListesi = cevap.results
                 self.characters = gelenKategoriListesi
                 DispatchQueue.main.async {
-                    self.characters = gelenKategoriListesi
-                    self.CollectionViewCharacter.reloadData()
-                }
-            }catch{
-                print(error.localizedDescription)
-            }
-        }.resume()
+                self.characters = gelenKategoriListesi
+                self.CollectionViewCharacter.reloadData()}}
+            catch{
+                print(error.localizedDescription)}}
+        .resume()
     }
 }
 
 
         extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSource,CollectionViewCellHomePageProtocol{
-            
             func sepeteEkle(indexPath: IndexPath){
                 let selectedCharacter = characters[indexPath.row]
                 print("Detayı Görülmek İstenen Kişi: \(selectedCharacter.name), ID: \(selectedCharacter.id)")
                 self.performSegue(withIdentifier: "characterDetail", sender: selectedCharacter.id)
-                print("okudu3")
+                
             }
             func numberOfSections(in collectionView: UICollectionView) -> Int {
                 return 1
             }
             func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
                 return characters.count
-                
             }
-          
+            
             func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
                 let film = characters[indexPath.row]
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell", for: indexPath) as! CollectionViewCellHomePage
            
-            
-        
-              
-              
-                 
-                
+         
         cell.labelCharacterName.text = film.name
         // Load the character's image using Kingfisher
         let imageUrlString = characters[indexPath.row].image
@@ -116,20 +103,17 @@ class ViewControllerHomePage: UIViewController {
                 
                 
                 
-                if let gender = Gender(rawValue: film.gender.rawValue) {
-                        switch gender {
-                        case .female:
-                            cell.genderrImageView.image = UIImage(named: "female")
-                        case .male:
-                            cell.genderrImageView.image = UIImage(named: "male")
-                        case .unknown:
-                            cell.genderrImageView.image = UIImage(named: "question-mark")
-                        
-                      
-                            
-                        }
-                    }
+       if let gender = Gender(rawValue: film.gender.rawValue) {
+          switch gender {
+          case .female:
+          cell.genderrImageView.image = UIImage(named: "female")
+          case .male:
+          cell.genderrImageView.image = UIImage(named: "male")
+          case .unknown:
+          cell.genderrImageView.image = UIImage(named: "question-mark")}
+        }
+          
         
         return cell
         }
-        }
+    }
