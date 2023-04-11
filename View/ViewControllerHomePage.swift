@@ -10,9 +10,10 @@ import Kingfisher
 
 class ViewControllerHomePage: UIViewController {
     
-    var characterId: Int = 1
-    @IBOutlet weak var CollectionViewCharacter: UICollectionView!
+    @IBOutlet weak var rickAndMortyImmageView: UIImageView!
     
+    @IBOutlet weak var CollectionViewCharacter: UICollectionView!
+    var characterId: Int = 1
     var characters = [Character]()
     var characterscell: Character?
     var film:Character?
@@ -35,6 +36,7 @@ class ViewControllerHomePage: UIViewController {
         design.minimumInteritemSpacing = 10
         design.minimumLineSpacing = 10
         CollectionViewCharacter.collectionViewLayout = design
+        
         
         
         
@@ -81,12 +83,14 @@ class ViewControllerHomePage: UIViewController {
                 let selectedCharacter = characters[indexPath.row]
                 print("Detayı Görülmek İstenen Kişi: \(selectedCharacter.name), ID: \(selectedCharacter.id)")
                 self.performSegue(withIdentifier: "characterDetail", sender: selectedCharacter.id)
+                
             }
             func numberOfSections(in collectionView: UICollectionView) -> Int {
                 return 1
             }
             func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
                 return characters.count
+                
             }
           
             func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -94,7 +98,10 @@ class ViewControllerHomePage: UIViewController {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell", for: indexPath) as! CollectionViewCellHomePage
            
             
-                
+        
+              
+              
+                 
                 
         cell.labelCharacterName.text = film.name
         // Load the character's image using Kingfisher
@@ -105,6 +112,23 @@ class ViewControllerHomePage: UIViewController {
         cell.layer.borderWidth = 0.5
         cell.hucreProtocol = self
         cell.indexPath = indexPath
+                
+                
+                
+                if let gender = Gender(rawValue: film.gender.rawValue) {
+                        switch gender {
+                        case .female:
+                            cell.genderrImageView.image = UIImage(named: "female")
+                        case .male:
+                            cell.genderrImageView.image = UIImage(named: "male")
+                        case .unknown:
+                            cell.genderrImageView.image = UIImage(named: "question-mark")
+                        
+                      
+                            
+                        }
+                    }
+        
         return cell
         }
         }
