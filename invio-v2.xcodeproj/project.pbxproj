@@ -180,8 +180,8 @@
 				E3432CEE29D53F290078D742 /* Origin.swift */,
 				E3769C4B29D0E8A300E5134F /* Location.swift */,
 				E3432CF429D540FB0078D742 /* DevelopLocation.swift */,
-				E3769C4D29D0EA5900E5134F /* Episode.swift */,
 				E3228CD629CFEA650016D5FB /* CharacterReply.swift */,
+				E3769C4D29D0EA5900E5134F /* Episode.swift */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
