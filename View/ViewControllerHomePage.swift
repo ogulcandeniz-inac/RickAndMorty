@@ -96,7 +96,7 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell", for: indexPath) as! CollectionViewCellHomePage
            
                
-                
+        print("değerler okunuyor1")
                 
         cell.labelCharacterName.text = film.name
         // Load the character's image using Kingfisher
@@ -108,7 +108,7 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
         cell.hucreProtocol = self
         cell.indexPath = indexPath
                 
-                
+        print("değerler okunuyor2")
                 
        if let gender = Gender(rawValue: film.gender.rawValue) {
           switch gender {
