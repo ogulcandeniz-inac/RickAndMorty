@@ -71,8 +71,13 @@ class ViewControllerHomePage: UIViewController {
     }
 }
 
-
-        extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSource,CollectionViewCellHomePageProtocol{
+        
+   
+extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSource,CollectionViewCellHomePageProtocol,HorizontalListCollectionViewCellProtocol{
+    func sepeteEkle2(indexPath: IndexPath) {
+        print("tıklandı")
+    }
+    
             func sepeteEkle(indexPath: IndexPath){
                 let selectedCharacter = characters[indexPath.row]
                 print("Detayı Görülmek İstenen Kişi: \(selectedCharacter.name), ID: \(selectedCharacter.id)")
@@ -90,7 +95,9 @@ class ViewControllerHomePage: UIViewController {
                 let film = characters[indexPath.row]
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell", for: indexPath) as! CollectionViewCellHomePage
            
-         
+               
+                
+                
         cell.labelCharacterName.text = film.name
         // Load the character's image using Kingfisher
         let imageUrlString = characters[indexPath.row].image
