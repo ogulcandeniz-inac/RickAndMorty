@@ -21,7 +21,7 @@ class ViewControllerHomePage: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("değerler doğru okunuyor")
         self.navigationItem.setHidesBackButton(true, animated:true);
         CollectionViewCharacter.delegate = self
         CollectionViewCharacter.dataSource = self
@@ -96,7 +96,8 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell", for: indexPath) as! CollectionViewCellHomePage
            
                
-        print("değerler okunuyor1")
+        
+        print("değerler doğru okunuyor")
                 
         cell.labelCharacterName.text = film.name
         // Load the character's image using Kingfisher
