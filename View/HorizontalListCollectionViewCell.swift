@@ -9,7 +9,8 @@ import UIKit
 
 class HorizontalListCollectionViewCell: UICollectionViewCell {
    
-    @IBOutlet weak var labelLocationn: UILabel!
+    @IBOutlet weak var labelLocation: UILabel!
+    
     var HorizontalListProtocol:HorizontalListCollectionViewCellProtocol?
     var indexPath:IndexPath?
     var location: Location?

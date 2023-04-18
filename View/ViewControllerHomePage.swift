@@ -21,13 +21,11 @@ class ViewControllerHomePage: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("değerler doğru okunuyor")
         self.navigationItem.setHidesBackButton(true, animated:true);
         CollectionViewCharacter.delegate = self
         CollectionViewCharacter.dataSource = self
  
         tumKategorilerAl()
-        print(self.characters,"deger")
         let design :UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let width = self.CollectionViewCharacter.frame.size.width
         design.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -36,8 +34,6 @@ class ViewControllerHomePage: UIViewController {
         design.minimumInteritemSpacing = 10
         design.minimumLineSpacing = 10
         CollectionViewCharacter.collectionViewLayout = design
-        
-   
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -53,7 +49,6 @@ class ViewControllerHomePage: UIViewController {
     
     func tumKategorilerAl(){
         let url = URL(string: "https://rickandmortyapi.com/api/character")!
-        print("okudu1")
         URLSession.shared.dataTask(with: url) { data , response , error in
             if error != nil || data == nil {
                 print("Hata")
@@ -82,7 +77,6 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
                 let selectedCharacter = characters[indexPath.row]
                 print("Detayı Görülmek İstenen Kişi: \(selectedCharacter.name), ID: \(selectedCharacter.id)")
                 self.performSegue(withIdentifier: "characterDetail", sender: selectedCharacter.id)
-                
             }
             func numberOfSections(in collectionView: UICollectionView) -> Int {
                 return 1
@@ -94,10 +88,11 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
             func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
                 let film = characters[indexPath.row]
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell", for: indexPath) as! CollectionViewCellHomePage
-           
-               
         
-        print("değerler doğru okunuyor")
+                
+                
+                
+                
                 
         cell.labelCharacterName.text = film.name
         // Load the character's image using Kingfisher
@@ -109,8 +104,7 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
         cell.hucreProtocol = self
         cell.indexPath = indexPath
                 
-        print("değerler okunuyor2")
-                
+               
        if let gender = Gender(rawValue: film.gender.rawValue) {
           switch gender {
           case .female:
@@ -120,8 +114,6 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
           case .unknown:
           cell.genderrImageView.image = UIImage(named: "question-mark")}
         }
-          
-        
         return cell
         }
     }

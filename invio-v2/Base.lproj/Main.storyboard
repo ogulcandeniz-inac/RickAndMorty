@@ -224,6 +224,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="138" height="33"/>
                                         <connections>
+                                            <outlet property="labelLocation" destination="ikR-vM-Kbc" id="iuM-vx-nbn"/>
                                             <outlet property="labelLocationn" destination="ikR-vM-Kbc" id="QnA-c0-VTz"/>
                                         </connections>
                                     </collectionViewCell>
