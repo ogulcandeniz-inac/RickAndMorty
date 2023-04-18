@@ -13,10 +13,12 @@ class ViewControllerHomePage: UIViewController {
     @IBOutlet weak var rickAndMortyImmageView: UIImageView!
     @IBOutlet weak var CollectionViewCharacter: UICollectionView!
     
+    @IBOutlet weak var LocationCollectionView: UICollectionView!
     var characterId: Int = 1
     var characters = [Character]()
     var characterscell: Character?
     var film:Character?
+    var locationsList = [String]()
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -26,6 +28,11 @@ class ViewControllerHomePage: UIViewController {
         CollectionViewCharacter.dataSource = self
  
         tumKategorilerAl()
+        tumLocationAl()
+        
+        print("viewcontoller Location\(locationsList)")
+        
+        
         let design :UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let width = self.CollectionViewCharacter.frame.size.width
         design.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -64,6 +71,34 @@ class ViewControllerHomePage: UIViewController {
                 print(error.localizedDescription)}}
         .resume()
     }
+    
+    func tumLocationAl(){
+        let url = URL(string: "https://rickandmortyapi.com/api/location")!
+        URLSession.shared.dataTask(with: url) { data , response , error in
+            if error != nil || data == nil {
+                print("Hata")
+                return}
+            do{
+                let cevap = try JSONDecoder().decode(LocationResponse.self, from: data!)
+                
+               
+                
+                if let cevapResults = cevap.results {
+                    
+                    for singleLocation in cevapResults{
+                    self.locationsList.append(singleLocation.name ?? "")
+                        
+                    }
+                }
+                
+                DispatchQueue.main.async {
+                
+                    print("Dipatch\(self.locationsList)")
+                }}
+            catch{
+                print(error.localizedDescription)}}
+        .resume()
+    }
 }
 
         
@@ -77,6 +112,10 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
                 let selectedCharacter = characters[indexPath.row]
                 print("Detayı Görülmek İstenen Kişi: \(selectedCharacter.name), ID: \(selectedCharacter.id)")
                 self.performSegue(withIdentifier: "characterDetail", sender: selectedCharacter.id)
+                
+               
+                
+                
             }
             func numberOfSections(in collectionView: UICollectionView) -> Int {
                 return 1
@@ -88,11 +127,8 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
             func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
                 let film = characters[indexPath.row]
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell", for: indexPath) as! CollectionViewCellHomePage
-        
                 
-                
-                
-                
+               
                 
         cell.labelCharacterName.text = film.name
         // Load the character's image using Kingfisher

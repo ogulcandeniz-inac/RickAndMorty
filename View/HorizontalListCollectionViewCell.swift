@@ -13,7 +13,7 @@ class HorizontalListCollectionViewCell: UICollectionViewCell {
     
     var HorizontalListProtocol:HorizontalListCollectionViewCellProtocol?
     var indexPath:IndexPath?
-    var location: Location?
+    
  
 }
 

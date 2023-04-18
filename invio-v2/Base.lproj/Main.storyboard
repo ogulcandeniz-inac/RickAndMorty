@@ -224,7 +224,6 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="138" height="33"/>
                                         <connections>
-                                            <outlet property="labelLocation" destination="ikR-vM-Kbc" id="iuM-vx-nbn"/>
                                             <outlet property="labelLocationn" destination="ikR-vM-Kbc" id="QnA-c0-VTz"/>
                                         </connections>
                                     </collectionViewCell>
@@ -263,6 +262,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="CollectionViewCharacter" destination="d0a-C8-yKH" id="9ay-W7-3d5"/>
+                        <outlet property="LocationCollectionView" destination="ScQ-xN-qqr" id="fuZ-93-yiO"/>
                         <outlet property="rickAndMortyImmageView" destination="oAr-mD-cZA" id="wGE-P0-pma"/>
                         <segue destination="eBL-vt-uK9" kind="show" identifier="characterDetail" id="Ber-k6-q2Y"/>
                     </connections>
@@ -517,7 +517,7 @@
                             <constraint firstItem="cir-Hg-C3A" firstAttribute="top" secondItem="G04-Yc-8Hc" secondAttribute="bottom" constant="5" id="y72-Dc-fvV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Character Detail" id="4G4-aq-hQt"/>
+                    <navigationItem key="navigationItem" title="Character Detail" customizationIdentifier="cellForItemAt" id="4G4-aq-hQt"/>
                     <connections>
                         <outlet property="imageViewCharacterPicture" destination="5WN-7H-Uqf" id="C2E-sX-xZI"/>
                         <outlet property="labelCreated" destination="1bl-oe-fmh" id="eeW-l8-76M"/>

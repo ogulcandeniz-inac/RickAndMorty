@@ -52,7 +52,7 @@ class CharacterDetailViewController: UIViewController {
                     self.labelSpecy.text = character.species.rawValue
                     self.labelGender.text = character.gender.rawValue
                     self.labelOrgin.text = character.origin.name
-                    self.labelLocation.text = character.location.name
+                        self.labelLocation.text = character.location.name
                         
                     for episodeURL in character.episode
                      {

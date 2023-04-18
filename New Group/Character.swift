@@ -27,7 +27,7 @@ struct Character: Codable {
     let type: String
     let gender: Gender
     let origin: Originn
-    let location: Location
+    let location: LocationResult
     let image: String
     let episode: [String]
     let url: String
@@ -40,11 +40,7 @@ enum Gender: String, Codable {
     case unknown = "unknown"
 }
 
-// MARK: - Location
-struct Location: Codable {
-    let name: String
-    let url: String
-}
+
 
 enum Species: String, Codable {
     case alien = "Alien"
