@@ -28,7 +28,6 @@
 		E3432CF329D540640078D742 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3432CF229D540640078D742 /* Gender.swift */; };
 		E3432CF529D540FB0078D742 /* DevelopLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3432CF429D540FB0078D742 /* DevelopLocation.swift */; };
 		E34B5AC129DCE32C00D52506 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E34B5AC029DCE32C00D52506 /* Kingfisher */; };
-		E360484829EF21A000870B46 /* AFService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360484729EF21A000870B46 /* AFService.swift */; };
 		E3769C4C29D0E8A300E5134F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3769C4B29D0E8A300E5134F /* Location.swift */; };
 		E3769C4E29D0EA5900E5134F /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3769C4D29D0EA5900E5134F /* Episode.swift */; };
 /* End PBXBuildFile section */
@@ -76,7 +75,6 @@
 		E3432CF229D540640078D742 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		E3432CF429D540FB0078D742 /* DevelopLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopLocation.swift; sourceTree = "<group>"; };
 		E34B5ABE29DCE20900D52506 /* Kingfisher */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Kingfisher; path = "../../../Library/Developer/Xcode/DerivedData/invio-v2-ajtobpctorjunoerrudisqfwmoez/SourcePackages/checkouts/Kingfisher"; sourceTree = "<group>"; };
-		E360484729EF21A000870B46 /* AFService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFService.swift; sourceTree = "<group>"; };
 		E3769C4B29D0E8A300E5134F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		E3769C4D29D0EA5900E5134F /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,10 +108,9 @@
 		E3228C9029CE253B0016D5FB = {
 			isa = PBXGroup;
 			children = (
-				E360484629EF210700870B46 /* Network */,
 				E3228C9B29CE253B0016D5FB /* invio-v2 */,
-				E3BE1AE829DE932200A2AE08 /* View */,
-				E3BE1AE929DE938200A2AE08 /* New Group */,
+				E3BE1AE829DE932200A2AE08 /* CollectionViewCell */,
+				E3BE1AE929DE938200A2AE08 /* Data */,
 				E3228CB229CE253F0016D5FB /* invio-v2Tests */,
 				E3228CBC29CE253F0016D5FB /* invio-v2UITests */,
 				E3228C9A29CE253B0016D5FB /* Products */,
@@ -140,6 +137,7 @@
 				E3228CA529CE253F0016D5FB /* Assets.xcassets */,
 				E3228CA729CE253F0016D5FB /* LaunchScreen.storyboard */,
 				E3228CAA29CE253F0016D5FB /* Info.plist */,
+				E34C98D729F0B76D00FB316B /* ViewController */,
 			);
 			path = "invio-v2";
 			sourceTree = "<group>";
@@ -162,27 +160,26 @@
 			path = "invio-v2UITests";
 			sourceTree = "<group>";
 		};
-		E360484629EF210700870B46 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				E360484729EF21A000870B46 /* AFService.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		E3BE1AE829DE932200A2AE08 /* View */ = {
+		E34C98D729F0B76D00FB316B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				E3228CA029CE253B0016D5FB /* ViewController.swift */,
-				E3228CCE29CE84F00016D5FB /* CollectionViewCellHomePage.swift */,
-				E3228CD829CFF2E20016D5FB /* HorizontalListCollectionViewCell.swift */,
-				E3228CD029CFCF210016D5FB /* CharacterDetailViewController.swift */,
 				E3228CCC29CE34A20016D5FB /* ViewControllerHomePage.swift */,
+				E3228CD029CFCF210016D5FB /* CharacterDetailViewController.swift */,
 			);
-			path = View;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
-		E3BE1AE929DE938200A2AE08 /* New Group */ = {
+		E3BE1AE829DE932200A2AE08 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E3228CCE29CE84F00016D5FB /* CollectionViewCellHomePage.swift */,
+				E3228CD829CFF2E20016D5FB /* HorizontalListCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		E3BE1AE929DE938200A2AE08 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				E3228CD429CFE7160016D5FB /* Character.swift */,
@@ -194,7 +191,7 @@
 				E3228CD629CFEA650016D5FB /* CharacterReply.swift */,
 				E3769C4D29D0EA5900E5134F /* Episode.swift */,
 			);
-			path = "New Group";
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,7 +340,6 @@
 				E3432CF329D540640078D742 /* Gender.swift in Sources */,
 				E3432CEF29D53F290078D742 /* Origin.swift in Sources */,
 				E3432CF529D540FB0078D742 /* DevelopLocation.swift in Sources */,
-				E360484829EF21A000870B46 /* AFService.swift in Sources */,
 				E3228CD929CFF2E30016D5FB /* HorizontalListCollectionViewCell.swift in Sources */,
 				E3228C9D29CE253B0016D5FB /* AppDelegate.swift in Sources */,
 				E3228C9F29CE253B0016D5FB /* SceneDelegate.swift in Sources */,

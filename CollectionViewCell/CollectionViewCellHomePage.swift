@@ -15,7 +15,6 @@ protocol CollectionViewCellHomePageProtocol
 
 class CollectionViewCellHomePage: UICollectionViewCell {
     
-    
     @IBOutlet weak var imageViewCharacterPicture: UIImageView!
     @IBOutlet weak var labelCharacterName: UILabel!
     @IBOutlet weak var imageViewCharacterGender: UIImageView!

@@ -8,9 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    
-    
 
     @IBOutlet weak var ımageViewRickAndMorty: UIImageView!
     @IBOutlet weak var ımageViewTitle: UIImageView!
@@ -40,30 +37,10 @@ class ViewController: UIViewController {
             counter = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(labelhello), userInfo: nil, repeats: false)
             UserDefaults.standard.set(currentCount-1, forKey:"launchCount")
         }
-       
-        
-        
-        
-                
-                
-                
-     
-        
-        
-        
-        
-        
-        
-       
-        
-        
+    
     }
 
-    
-    
-    
-    
-    
+   
     @objc func imageTapped(sender: UITapGestureRecognizer)
     {
         let next = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerHomePage") as! ViewControllerHomePage
@@ -109,15 +86,4 @@ class ViewController: UIViewController {
             self.labeltitle.transform = CGAffineTransform(scaleX: 1, y: 1)
         }, completion: nil)
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

@@ -71,7 +71,7 @@
             </objects>
             <point key="canvasLocation" x="937.85046728971952" y="51.187904967602599"/>
         </scene>
-        <!--  -->
+        <!--  Rick And Morty-->
         <scene sceneID="Qq2-vM-qKQ">
             <objects>
                 <viewController storyboardIdentifier="ViewControllerHomePage" id="RZL-PM-MCM" customClass="ViewControllerHomePage" customModule="invio_v2" customModuleProvider="target" sceneMemberID="viewController">
@@ -182,88 +182,64 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ScQ-xN-qqr">
-                                <rect key="frame" x="0.0" y="103" width="430" height="42"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e7K-gp-628">
+                                <rect key="frame" x="0.0" y="103" width="430" height="34"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pQP-dF-7o6">
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hGm-Lk-cQI">
+                                            <size key="itemSize" width="151" height="34"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="characterCell2" id="QEL-rO-GSZ" customClass="HorizontalListCollectionViewCell" customModule="invio_v2" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="151" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pe7-PM-Pbz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="151" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgv-b7-QqM">
+                                                            <rect key="frame" x="54" y="5" width="42" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </collectionViewCellContentView>
+                                                <size key="customSize" width="151" height="34"/>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="XCr-Cc-SR6"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="430" id="woW-ip-t5g"/>
+                                    <constraint firstAttribute="height" constant="34" id="agg-C3-nZH"/>
+                                    <constraint firstAttribute="width" constant="430" id="sRm-xw-N1r"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a5A-6j-Iqg">
-                                    <size key="itemSize" width="138" height="33"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="horizontolListCell" id="vXr-am-KtT" customClass="HorizontalListCollectionViewCell" customModule="invio_v2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="138" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Pq3-HI-QT7">
-                                            <rect key="frame" x="0.0" y="0.0" width="138" height="33"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikR-vM-Kbc">
-                                                    <rect key="frame" x="41" y="2" width="56" height="31"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="Label">
-                                                            <attributes>
-                                                                <font key="NSFont" size="22" name="AvenirNext-Regular"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="ikR-vM-Kbc" firstAttribute="top" secondItem="Pq3-HI-QT7" secondAttribute="top" constant="2" id="2az-l5-DjB"/>
-                                                <constraint firstItem="ikR-vM-Kbc" firstAttribute="top" secondItem="Pq3-HI-QT7" secondAttribute="top" constant="2" id="OQi-W9-cMu"/>
-                                                <constraint firstItem="ikR-vM-Kbc" firstAttribute="centerX" secondItem="Pq3-HI-QT7" secondAttribute="centerX" id="sqi-7Y-eDO"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="138" height="33"/>
-                                        <connections>
-                                            <outlet property="labelLocationn" destination="ikR-vM-Kbc" id="QnA-c0-VTz"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rick_And_Morty_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="oAr-mD-cZA">
-                                <rect key="frame" x="149" y="51" width="132" height="47"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="6yJ-u4-UOw"/>
-                                    <constraint firstAttribute="width" constant="132" id="hZS-MA-I9h"/>
-                                </constraints>
-                            </imageView>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NCs-nc-iV5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="e7K-gp-628" firstAttribute="trailing" secondItem="NCs-nc-iV5" secondAttribute="trailing" id="0XA-ec-3B1"/>
+                            <constraint firstItem="e7K-gp-628" firstAttribute="top" secondItem="NCs-nc-iV5" secondAttribute="top" id="1IF-yy-ejh"/>
                             <constraint firstItem="d0a-C8-yKH" firstAttribute="bottom" secondItem="NCs-nc-iV5" secondAttribute="bottom" id="33J-QH-wbj"/>
-                            <constraint firstItem="ScQ-xN-qqr" firstAttribute="top" secondItem="NCs-nc-iV5" secondAttribute="top" id="4aN-kV-cFl"/>
-                            <constraint firstItem="ScQ-xN-qqr" firstAttribute="top" secondItem="NCs-nc-iV5" secondAttribute="top" id="60Y-DR-AHf"/>
                             <constraint firstItem="d0a-C8-yKH" firstAttribute="trailing" secondItem="NCs-nc-iV5" secondAttribute="trailing" id="9EG-XH-mg8"/>
-                            <constraint firstItem="ScQ-xN-qqr" firstAttribute="trailing" secondItem="NCs-nc-iV5" secondAttribute="trailing" id="FGO-aa-dkq"/>
-                            <constraint firstItem="ScQ-xN-qqr" firstAttribute="trailing" secondItem="NCs-nc-iV5" secondAttribute="trailing" id="RtZ-J3-doO"/>
-                            <constraint firstItem="d0a-C8-yKH" firstAttribute="top" secondItem="ScQ-xN-qqr" secondAttribute="bottom" id="Yfq-Qx-KQd"/>
+                            <constraint firstItem="e7K-gp-628" firstAttribute="leading" secondItem="NCs-nc-iV5" secondAttribute="leading" id="Wbq-qk-4xq"/>
                             <constraint firstItem="d0a-C8-yKH" firstAttribute="leading" secondItem="NCs-nc-iV5" secondAttribute="leading" id="dCb-ok-5wU"/>
-                            <constraint firstItem="oAr-mD-cZA" firstAttribute="top" secondItem="Ocb-i5-H47" secondAttribute="top" constant="51" id="jj4-r2-GMz"/>
-                            <constraint firstItem="ScQ-xN-qqr" firstAttribute="leading" secondItem="NCs-nc-iV5" secondAttribute="leading" id="lEh-mj-NDP"/>
-                            <constraint firstItem="ScQ-xN-qqr" firstAttribute="top" secondItem="oAr-mD-cZA" secondAttribute="bottom" constant="5" id="lH3-SW-XwO"/>
-                            <constraint firstItem="d0a-C8-yKH" firstAttribute="top" secondItem="ScQ-xN-qqr" secondAttribute="bottom" id="mnM-lW-yOE"/>
-                            <constraint firstItem="oAr-mD-cZA" firstAttribute="centerX" secondItem="ScQ-xN-qqr" secondAttribute="centerX" id="new-g0-lls"/>
                             <constraint firstItem="d0a-C8-yKH" firstAttribute="leading" secondItem="Ocb-i5-H47" secondAttribute="leading" id="sWJ-89-Aer"/>
                             <constraint firstItem="d0a-C8-yKH" firstAttribute="trailing" secondItem="NCs-nc-iV5" secondAttribute="trailing" id="zQJ-ZZ-S5O"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="  " id="4wp-GM-tN1">
+                    <navigationItem key="navigationItem" title="  Rick And Morty" id="4wp-GM-tN1">
                         <barButtonItem key="backBarButtonItem" title="Home Page" id="Qnk-ei-3Nx"/>
                     </navigationItem>
                     <connections>
                         <outlet property="CollectionViewCharacter" destination="d0a-C8-yKH" id="9ay-W7-3d5"/>
-                        <outlet property="LocationCollectionView" destination="ScQ-xN-qqr" id="fuZ-93-yiO"/>
-                        <outlet property="rickAndMortyImmageView" destination="oAr-mD-cZA" id="wGE-P0-pma"/>
                         <segue destination="eBL-vt-uK9" kind="show" identifier="characterDetail" id="Ber-k6-q2Y"/>
                     </connections>
                 </viewController>

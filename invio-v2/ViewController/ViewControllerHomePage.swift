@@ -12,14 +12,17 @@ class ViewControllerHomePage: UIViewController {
     
     @IBOutlet weak var rickAndMortyImmageView: UIImageView!
     @IBOutlet weak var CollectionViewCharacter: UICollectionView!
-    
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var LocationCollectionView: UICollectionView!
+    
+    
     var characterId: Int = 1
     var characters = [Character]()
     var characterscell: Character?
     var film:Character?
     var locationsList = [String]()
-    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +33,6 @@ class ViewControllerHomePage: UIViewController {
         tumKategorilerAl()
         tumLocationAl()
         
-        print("viewcontoller Location\(locationsList)")
         
         
         let design :UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -104,6 +106,10 @@ class ViewControllerHomePage: UIViewController {
         
    
 extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSource,CollectionViewCellHomePageProtocol,HorizontalListCollectionViewCellProtocol{
+    func configure(with location: String?) {
+         print("tıklandı")
+    }
+    
     func sepeteEkle2(indexPath: IndexPath) {
         print("tıklandı")
     }
@@ -114,6 +120,11 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
                 self.performSegue(withIdentifier: "characterDetail", sender: selectedCharacter.id)
                 
                
+                
+                
+                
+                
+                
                 
                 
             }
@@ -128,7 +139,9 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
                 let film = characters[indexPath.row]
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell", for: indexPath) as! CollectionViewCellHomePage
                 
-               
+            
+                
+                
                 
         cell.labelCharacterName.text = film.name
         // Load the character's image using Kingfisher

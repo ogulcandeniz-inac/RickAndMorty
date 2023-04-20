@@ -8,20 +8,15 @@
 import UIKit
 
 class HorizontalListCollectionViewCell: UICollectionViewCell {
-   
-    @IBOutlet weak var labelLocation: UILabel!
-    
-    var HorizontalListProtocol:HorizontalListCollectionViewCellProtocol?
-    var indexPath:IndexPath?
+   var HorizontalListProtocol:HorizontalListCollectionViewCellProtocol?
+   var indexPath:IndexPath?
     
  
+    
+    
 }
 
-
-
-
 protocol HorizontalListCollectionViewCellProtocol
-
 {
     func sepeteEkle2(indexPath:IndexPath)
 }
