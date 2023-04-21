@@ -94,7 +94,7 @@ class ViewControllerHomePage: UIViewController {
                 }
                 
                 DispatchQueue.main.async {
-                
+                    
                     print("Dipatch\(self.locationsList)")
                 }}
             catch{
@@ -118,15 +118,7 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
                 let selectedCharacter = characters[indexPath.row]
                 print("Detayı Görülmek İstenen Kişi: \(selectedCharacter.name), ID: \(selectedCharacter.id)")
                 self.performSegue(withIdentifier: "characterDetail", sender: selectedCharacter.id)
-                
-               
-                
-                
-                
-                
-                
-                
-                
+                  
             }
             func numberOfSections(in collectionView: UICollectionView) -> Int {
                 return 1
@@ -136,12 +128,18 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
             }
             
             func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-                let film = characters[indexPath.row]
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell", for: indexPath) as! CollectionViewCellHomePage
+              
+                collectionView.register(HorizontalListCollectionViewCell.self, forCellWithReuseIdentifier: "characterCell2")
+
+             
+                   let film = characters[indexPath.row]
+                   let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell", for: indexPath) as! CollectionViewCellHomePage
+
+                   let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell2", for: indexPath) as! HorizontalListCollectionViewCell
+
+                cell2.labelLocation?.text = "bilgi"
                 
             
-                
-                
                 
         cell.labelCharacterName.text = film.name
         // Load the character's image using Kingfisher

@@ -182,56 +182,88 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e7K-gp-628">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QQ3-Ax-IGz">
                                 <rect key="frame" x="0.0" y="103" width="430" height="34"/>
-                                <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pQP-dF-7o6">
-                                        <rect key="frame" x="0.0" y="0.0" width="430" height="34"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hGm-Lk-cQI">
-                                            <size key="itemSize" width="151" height="34"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="characterCell2" id="QEL-rO-GSZ" customClass="HorizontalListCollectionViewCell" customModule="invio_v2" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="151" height="34"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pe7-PM-Pbz">
-                                                    <rect key="frame" x="0.0" y="0.0" width="151" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgv-b7-QqM">
-                                                            <rect key="frame" x="54" y="5" width="42" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </collectionViewCellContentView>
-                                                <size key="customSize" width="151" height="34"/>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
-                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="agg-C3-nZH"/>
-                                    <constraint firstAttribute="width" constant="430" id="sRm-xw-N1r"/>
+                                    <constraint firstAttribute="height" constant="34" id="Ftx-gj-hd8"/>
+                                    <constraint firstAttribute="width" constant="430" id="GiU-6n-Qsq"/>
                                 </constraints>
-                            </stackView>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IUe-6l-Q0R">
+                                    <size key="itemSize" width="89" height="33"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="characterCell2" id="BQE-ud-E1S" customClass="HorizontalListCollectionViewCell" customModule="invio_v2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="89" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XUE-d2-NR7" customClass="CollectionViewCellHomePage" customModule="invio_v2" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="89" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27T-Pj-1Jv">
+                                                    <rect key="frame" x="7.9999999999999964" y="7.9999999999999982" width="53.666666666666657" height="30.333333333333329"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Label">
+                                                            <attributes>
+                                                                <font key="NSFont" size="22" name="Avenir-Roman"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weg-f3-jY9">
+                                                    <rect key="frame" x="0.0" y="11" width="99" height="27"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain">
+                                                        <attributedString key="attributedTitle">
+                                                            <fragment content="B">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="18" name="AvenirNext-Medium"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="buttonLocation:" destination="BQE-ud-E1S" eventType="touchUpInside" id="lcb-uE-5QK"/>
+                                                        <action selector="buttonpass:" destination="BQE-ud-E1S" eventType="touchUpInside" id="s59-3M-tBH"/>
+                                                        <action selector="locationButton:" destination="BQE-ud-E1S" eventType="touchUpInside" id="9md-Mc-SCf"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="27T-Pj-1Jv" secondAttribute="trailing" constant="27.329999999999998" id="DK3-wE-AGa"/>
+                                                <constraint firstItem="27T-Pj-1Jv" firstAttribute="leading" secondItem="XUE-d2-NR7" secondAttribute="leading" constant="8" id="cYM-GC-6SS"/>
+                                                <constraint firstItem="27T-Pj-1Jv" firstAttribute="top" secondItem="XUE-d2-NR7" secondAttribute="top" constant="8" id="tRB-Sw-llz"/>
+                                                <constraint firstAttribute="bottom" secondItem="27T-Pj-1Jv" secondAttribute="bottom" constant="-5.3300000000000001" id="wtQ-ig-UDT"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="89" height="33"/>
+                                        <connections>
+                                            <outlet property="labelCharacterName" destination="27T-Pj-1Jv" id="aeY-bn-cuo"/>
+                                            <outlet property="labelLocation" destination="27T-Pj-1Jv" id="IZy-jp-hlR"/>
+                                            <outlet property="locationLabel" destination="27T-Pj-1Jv" id="1kS-8Y-0fC"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NCs-nc-iV5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="e7K-gp-628" firstAttribute="trailing" secondItem="NCs-nc-iV5" secondAttribute="trailing" id="0XA-ec-3B1"/>
-                            <constraint firstItem="e7K-gp-628" firstAttribute="top" secondItem="NCs-nc-iV5" secondAttribute="top" id="1IF-yy-ejh"/>
                             <constraint firstItem="d0a-C8-yKH" firstAttribute="bottom" secondItem="NCs-nc-iV5" secondAttribute="bottom" id="33J-QH-wbj"/>
                             <constraint firstItem="d0a-C8-yKH" firstAttribute="trailing" secondItem="NCs-nc-iV5" secondAttribute="trailing" id="9EG-XH-mg8"/>
-                            <constraint firstItem="e7K-gp-628" firstAttribute="leading" secondItem="NCs-nc-iV5" secondAttribute="leading" id="Wbq-qk-4xq"/>
+                            <constraint firstItem="d0a-C8-yKH" firstAttribute="top" secondItem="QQ3-Ax-IGz" secondAttribute="bottom" constant="8" symbolic="YES" id="BVn-Wb-d9v"/>
+                            <constraint firstItem="QQ3-Ax-IGz" firstAttribute="trailing" secondItem="NCs-nc-iV5" secondAttribute="trailing" id="Eoc-Xc-fEz"/>
                             <constraint firstItem="d0a-C8-yKH" firstAttribute="leading" secondItem="NCs-nc-iV5" secondAttribute="leading" id="dCb-ok-5wU"/>
+                            <constraint firstItem="QQ3-Ax-IGz" firstAttribute="leading" secondItem="NCs-nc-iV5" secondAttribute="leading" id="hh1-2c-4ca"/>
                             <constraint firstItem="d0a-C8-yKH" firstAttribute="leading" secondItem="Ocb-i5-H47" secondAttribute="leading" id="sWJ-89-Aer"/>
+                            <constraint firstItem="QQ3-Ax-IGz" firstAttribute="top" secondItem="NCs-nc-iV5" secondAttribute="top" id="yRb-d8-dfQ"/>
                             <constraint firstItem="d0a-C8-yKH" firstAttribute="trailing" secondItem="NCs-nc-iV5" secondAttribute="trailing" id="zQJ-ZZ-S5O"/>
                         </constraints>
                     </view>

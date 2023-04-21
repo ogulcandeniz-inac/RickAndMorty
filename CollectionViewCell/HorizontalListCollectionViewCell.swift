@@ -11,7 +11,11 @@ class HorizontalListCollectionViewCell: UICollectionViewCell {
    var HorizontalListProtocol:HorizontalListCollectionViewCellProtocol?
    var indexPath:IndexPath?
     
- 
+    @IBOutlet weak var labelLocation: UILabel!
+    
+    
+    @IBAction func buttonLocation(_ sender: Any) {
+    }
     
     
 }
@@ -19,6 +23,7 @@ class HorizontalListCollectionViewCell: UICollectionViewCell {
 protocol HorizontalListCollectionViewCellProtocol
 {
     func sepeteEkle2(indexPath:IndexPath)
+    
 }
 
 

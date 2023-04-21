@@ -22,6 +22,9 @@ class CollectionViewCellHomePage: UICollectionViewCell {
     
     
     
+    
+    
+    
     @IBAction func buttonpass(_ sender: Any){
     hucreProtocol?.sepeteEkle(indexPath: indexPath!)
     }
