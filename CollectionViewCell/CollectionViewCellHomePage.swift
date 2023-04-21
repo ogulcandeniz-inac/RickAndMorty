@@ -7,9 +7,7 @@
 
 import UIKit
 
-protocol CollectionViewCellHomePageProtocol
-
-{
+protocol CollectionViewCellHomePageProtocol {
     func sepeteEkle(indexPath:IndexPath)
 }
 
@@ -20,16 +18,27 @@ class CollectionViewCellHomePage: UICollectionViewCell {
     @IBOutlet weak var imageViewCharacterGender: UIImageView!
     @IBOutlet weak var genderrImageView: UIImageView!
     
-    
-    
-    
-    
-    
+
     @IBAction func buttonpass(_ sender: Any){
-    hucreProtocol?.sepeteEkle(indexPath: indexPath!)
+        hucreProtocol?.sepeteEkle(indexPath: indexPath!)
     }
     
     var hucreProtocol:CollectionViewCellHomePageProtocol?
     var indexPath:IndexPath?
-  
+}
+
+
+class DifferentCell: UICollectionViewCell {
+
+    @IBOutlet weak var characterPicture: UIImageView!
+    @IBOutlet weak var characterName: UILabel!
+    @IBOutlet weak var gImageView: UIImageView!
+
+    @IBAction func buttonpass(_ sender: Any){
+        hucreProtocol?.sepeteEkle(indexPath: indexPath!)
+    }
+
+    var hucreProtocol:CollectionViewCellHomePageProtocol?
+    var indexPath:IndexPath?
+
 }

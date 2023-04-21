@@ -8,22 +8,21 @@
 import UIKit
 
 class HorizontalListCollectionViewCell: UICollectionViewCell {
-   var HorizontalListProtocol:HorizontalListCollectionViewCellProtocol?
-   var indexPath:IndexPath?
-    
-    @IBOutlet weak var labelLocation: UILabel!
-    
-    
-    @IBAction func buttonLocation(_ sender: Any) {
+
+    var HorizontalListProtocol:HorizontalListCollectionViewCellProtocol?
+    var indexPath:IndexPath?
+
+    @IBOutlet weak var locationLabel: UILabel!
+
+    func updateUI(name: String) {
+        locationLabel.textColor = .black
+        locationLabel.text = name
     }
-    
-    
 }
 
 protocol HorizontalListCollectionViewCellProtocol
 {
     func sepeteEkle2(indexPath:IndexPath)
-    
 }
 
 
