@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class ViewControllerHomePage: UIViewController {
+class ViewControllerHomePage: UIViewController, DifferentCellProtocol{
 
     @IBOutlet weak var locationCollectionView: UICollectionView!
     @IBOutlet weak var collectionViewCharacter: UICollectionView!
@@ -51,6 +51,7 @@ class ViewControllerHomePage: UIViewController {
             }
         }
     }
+
 
     
     func tumKategorilerAl(){
@@ -104,12 +105,12 @@ class ViewControllerHomePage: UIViewController {
         
    
 extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSource,CollectionViewCellHomePageProtocol,HorizontalListCollectionViewCellProtocol {
-    func configure(with location: String?) {
-        print("tıklandı")
-    }
+    
     
     func sepeteEkle2(indexPath: IndexPath) {
-        print("tıklandı")
+        let selectedCharacter = characters[indexPath.row]
+        print("Detayı Görülmek İstenen Kişi: \(selectedCharacter.name), ID: \(selectedCharacter.id)")
+        self.performSegue(withIdentifier: "characterDetail", sender: selectedCharacter.id)
     }
     
     func sepeteEkle(indexPath: IndexPath){
@@ -136,7 +137,10 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
             let item = locationsList[indexPath.row]
             cell.updateUI(name: item)
             return cell
-
+            
+            
+            
+            
         } else {
             /// TODO
             let film = characters[indexPath.row]
@@ -154,16 +158,21 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
                 cell.genderrImageView.image = UIImage(named: "male")
                 return cell
             } else if film.gender == .female {
+                
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DifferentCell", for: indexPath) as! DifferentCell
-                cell.characterName.text = film.name
+                
+                
+                
+                cell.labelCharacterName.text = film.name
+                // Load the character's image using Kingfisher
                 let imageUrlString = characters[indexPath.row].image
                 let imageUrl = URL(string: imageUrlString)!
-                cell.characterPicture.kf.setImage(with: imageUrl)
+                cell.imageViewCharacterPicture.kf.setImage(with: imageUrl)
                 cell.layer.borderColor = UIColor.lightGray.cgColor
                 cell.layer.borderWidth = 0.5
                 cell.hucreProtocol = self
                 cell.indexPath = indexPath
-                cell.gImageView.image = UIImage(named: "female")
+                cell.genderrImageView.image = UIImage(named: "female")
                 return cell
             }
            else {

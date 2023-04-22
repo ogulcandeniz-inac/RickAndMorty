@@ -18,6 +18,8 @@ class HorizontalListCollectionViewCell: UICollectionViewCell {
         locationLabel.textColor = .black
         locationLabel.text = name
     }
+    
+   
 }
 
 protocol HorizontalListCollectionViewCellProtocol
