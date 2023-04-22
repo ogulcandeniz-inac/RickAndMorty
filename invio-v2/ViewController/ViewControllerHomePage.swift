@@ -39,6 +39,23 @@ class ViewControllerHomePage: UIViewController, DifferentCellProtocol{
         design.minimumInteritemSpacing = 10
         design.minimumLineSpacing = 10
         collectionViewCharacter.collectionViewLayout = design
+        
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+        let width2 = self.locationCollectionView.frame.width
+        let cellWidth2 = (width2 - 20) / 2 // set the cell width based on the collection view width
+        let cellHeight2 = cellWidth2 * 1 // set the cell height based on the cell width
+        layout.itemSize = CGSize(width: cellWidth2, height: cellHeight2)
+        layout.minimumInteritemSpacing = 1
+        layout.minimumLineSpacing = 1
+        self.locationCollectionView.collectionViewLayout = layout
+        
+        
+     
+
+
     }
     
     
@@ -122,6 +139,21 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == locationCollectionView {
+            let cell = collectionView.cellForItem(at: indexPath) as! HorizontalListCollectionViewCell
+            cell.isSelected = true
+            cell.backgroundColor = UIColor.white
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if collectionView == locationCollectionView {
+            let cell = collectionView.cellForItem(at: indexPath) as! HorizontalListCollectionViewCell
+            cell.isSelected = false
+            cell.backgroundColor = UIColor.lightGray
+        }
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == locationCollectionView {
             return locationsList.count
@@ -133,7 +165,30 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == locationCollectionView {
             /// TODO
+            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell2", for: indexPath) as! HorizontalListCollectionViewCell
+                    
+                    cell.layer.cornerRadius = 100
+                    cell.layer.masksToBounds = true
+                    cell.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+                    
+                    cell.backgroundColor = UIColor.lightGray
+                    cell.layer.borderColor = UIColor.lightGray.cgColor
+                    cell.layer.borderWidth = 1
+                    cell.layer.cornerRadius = 10
+                    cell.clipsToBounds = true
+                    
+                    // Check if cell is selected
+                    if cell.isSelected {
+                        cell.backgroundColor = UIColor.white
+                    }
+            
+            
+     
+            
+            
+            
+            
             let item = locationsList[indexPath.row]
             cell.updateUI(name: item)
             return cell
