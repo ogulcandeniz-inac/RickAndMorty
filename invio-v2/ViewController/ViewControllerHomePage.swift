@@ -149,9 +149,10 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
 
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if collectionView == locationCollectionView {
-            let cell = collectionView.cellForItem(at: indexPath) as! HorizontalListCollectionViewCell
-            cell.isSelected = false
-            cell.backgroundColor = UIColor.lightGray
+            if let cell = collectionView.cellForItem(at: indexPath) as? HorizontalListCollectionViewCell {
+                cell.isSelected = false
+                cell.backgroundColor = UIColor.lightGray
+            }
         }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -175,7 +176,7 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
                     cell.backgroundColor = UIColor.lightGray
                     cell.layer.borderColor = UIColor.lightGray.cgColor
                     cell.layer.borderWidth = 1
-                    cell.layer.cornerRadius = 10
+                    cell.layer.cornerRadius = cell.frame.width / 2
                     cell.clipsToBounds = true
                     
                     // Check if cell is selected
