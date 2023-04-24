@@ -139,11 +139,32 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == locationCollectionView {
             let cell = collectionView.cellForItem(at: indexPath) as! HorizontalListCollectionViewCell
             cell.isSelected = true
             cell.backgroundColor = UIColor.white
+            
+            let selectedLocation = locationsList[indexPath.item]
+            print("gelen verinin ne olduğu",selectedLocation)
+            
+            for character in characters {
+                if character.location.name == selectedLocation {
+                            print("giden verinin ne olduğu",character)
+                    
+                   let bilgi = character
+                    print("veriler adı", bilgi.name)
+                    print("veriler cinsiyeti", bilgi.gender)
+                    
+                    collectionView.register(CollectionViewCellHomePage.self, forCellWithReuseIdentifier: "characterCell")
+
+
+                    
+                        }
+                    }
+        
+            
         }
     }
 
@@ -164,6 +185,8 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        
         if collectionView == locationCollectionView {
             /// TODO
             
@@ -184,11 +207,8 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
                         cell.backgroundColor = UIColor.white
                     }
             
-            
+                    
      
-            
-            
-            
             
             let item = locationsList[indexPath.row]
             cell.updateUI(name: item)
