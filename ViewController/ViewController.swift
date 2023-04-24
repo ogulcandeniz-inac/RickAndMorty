@@ -4,9 +4,7 @@
 //
 //  Created by Oğulcan Deniz İnaç on 24.03.2023.
 //
-
 import UIKit
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var ımageViewRickAndMorty: UIImageView!
@@ -20,12 +18,9 @@ class ViewController: UIViewController {
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
         ımageViewRickAndMorty.addGestureRecognizer(tapGR)
         ımageViewRickAndMorty.isUserInteractionEnabled = true
-        
         animation()
         scaleanimation()
-        
         let currentCount = UserDefaults.standard.integer(forKey: "launchCount")
-        //labeltitle.text = String(currentCount)
         
         if currentCount == 0
         {
@@ -37,10 +32,8 @@ class ViewController: UIViewController {
             counter = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(labelhello), userInfo: nil, repeats: false)
             UserDefaults.standard.set(currentCount-1, forKey:"launchCount")
         }
-    
     }
 
-   
     @objc func imageTapped(sender: UITapGestureRecognizer)
     {
         let next = self.storyboard?.instantiateViewController(withIdentifier: "ViewControllerHomePage") as! ViewControllerHomePage

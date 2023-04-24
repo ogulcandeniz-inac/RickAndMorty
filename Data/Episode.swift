@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class Episode:Codable
 {
     var episode_id:Int?

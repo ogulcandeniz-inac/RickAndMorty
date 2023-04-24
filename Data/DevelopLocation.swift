@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct DevelopLocation: Codable {
     let id: Int
     let name: String
@@ -17,7 +16,6 @@ struct DevelopLocation: Codable {
     let url: String
     let created: String
     
-    
     init(id: Int, name: String, type: String, dimension: String, residents: [String], url: String, created: String) {
         self.id = id
         self.name = name
@@ -26,11 +24,5 @@ struct DevelopLocation: Codable {
         self.residents = residents
         self.url = url
         self.created = created
-    }
-    
-    
-    
-    
-    
-    
+    }   
 }

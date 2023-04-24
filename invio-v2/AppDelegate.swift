@@ -4,7 +4,6 @@
 //
 //  Created by Oğulcan Deniz İnaç on 24.03.2023.
 //
-
 import UIKit
 
 @main
