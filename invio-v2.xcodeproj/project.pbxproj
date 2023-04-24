@@ -109,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				E3228C9B29CE253B0016D5FB /* invio-v2 */,
+				E34C98D729F0B76D00FB316B /* ViewController */,
 				E3BE1AE829DE932200A2AE08 /* CollectionViewCell */,
 				E3BE1AE929DE938200A2AE08 /* Data */,
 				E3228CB229CE253F0016D5FB /* invio-v2Tests */,
@@ -137,7 +138,6 @@
 				E3228CA529CE253F0016D5FB /* Assets.xcassets */,
 				E3228CA729CE253F0016D5FB /* LaunchScreen.storyboard */,
 				E3228CAA29CE253F0016D5FB /* Info.plist */,
-				E34C98D729F0B76D00FB316B /* ViewController */,
 			);
 			path = "invio-v2";
 			sourceTree = "<group>";

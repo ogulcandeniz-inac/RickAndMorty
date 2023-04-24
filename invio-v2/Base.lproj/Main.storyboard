@@ -657,7 +657,7 @@
                             <constraint firstItem="hw1-qa-alN" firstAttribute="width" secondItem="yBV-QE-JVA" secondAttribute="width" id="uQI-YL-FGU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Character Detail Scene" id="hUk-E9-sOe"/>
+                    <navigationItem key="navigationItem" title="Character Detail Scene" customizationIdentifier="characterDetailTitle" id="hUk-E9-sOe"/>
                     <size key="freeformSize" width="430" height="1200"/>
                     <connections>
                         <outlet property="imageViewCharacterPicture" destination="mi4-aF-vSX" id="4Uc-m8-MWb"/>

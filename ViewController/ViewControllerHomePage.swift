@@ -51,23 +51,21 @@ class ViewControllerHomePage: UIViewController, DifferentCellProtocol{
         layout.minimumInteritemSpacing = 1
         layout.minimumLineSpacing = 1
         self.locationCollectionView.collectionViewLayout = layout
-        
-        
-     
-
-
+   
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "characterDetail" {
             if let characterDetailViewController = segue.destination as? CharacterDetailViewController {
-                if let selectedCharacterId = sender as? Int {
-                    characterDetailViewController.characterId = selectedCharacterId
+                if let selectedCharacter = sender as? Character {
+                    characterDetailViewController.characterId = selectedCharacter.id
+                    characterDetailViewController.navigationItem.title = selectedCharacter.name
                 }
             }
         }
     }
+
 
 
     
@@ -127,14 +125,16 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
     func sepeteEkle2(indexPath: IndexPath) {
         let selectedCharacter = characters[indexPath.row]
         print("Detayı Görülmek İstenen Kişi: \(selectedCharacter.name), ID: \(selectedCharacter.id)")
-        self.performSegue(withIdentifier: "characterDetail", sender: selectedCharacter.id)
+        self.performSegue(withIdentifier: "characterDetail", sender: selectedCharacter)
     }
+
     
-    func sepeteEkle(indexPath: IndexPath){
+    func sepeteEkle(indexPath: IndexPath) {
         let selectedCharacter = characters[indexPath.row]
         print("Detayı Görülmek İstenen Kişi: \(selectedCharacter.name), ID: \(selectedCharacter.id)")
-        self.performSegue(withIdentifier: "characterDetail", sender: selectedCharacter.id)
+        self.performSegue(withIdentifier: "characterDetail", sender: selectedCharacter)
     }
+
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -157,9 +157,7 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
                     print("veriler adı", bilgi.name)
                     print("veriler cinsiyeti", bilgi.gender)
                     
-                    collectionView.register(CollectionViewCellHomePage.self, forCellWithReuseIdentifier: "characterCell")
-
-
+                   
                     
                         }
                     }
