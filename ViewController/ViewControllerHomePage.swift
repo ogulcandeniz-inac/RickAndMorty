@@ -18,7 +18,8 @@ class ViewControllerHomePage: UIViewController, DifferentCellProtocol{
     var characterscell: Character?
     var film:Character?
     var locationsList = [String]()
-
+    var selectedLocationIDs: [Int] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated:true);
@@ -130,9 +131,11 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
             let selectedLocation = locationsList[indexPath.item]
             for character in characters {
                 if character.location.name == selectedLocation {
+                    selectedLocationIDs.append(character.id)
                     // Display of selected location 'not complete'
                 }
             }
+            print("Selected location IDs: \(selectedLocationIDs)")
         }
     }
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
