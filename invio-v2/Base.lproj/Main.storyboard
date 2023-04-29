@@ -140,7 +140,7 @@
                                                         <action selector="buttonpass:" destination="FOe-Gf-vUV" eventType="touchUpInside" id="AtB-Vh-E9f"/>
                                                     </connections>
                                                 </button>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="django" translatesAutoresizingMaskIntoConstraints="NO" id="q6a-k0-akg">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blue" translatesAutoresizingMaskIntoConstraints="NO" id="q6a-k0-akg">
                                                     <rect key="frame" x="-1" y="0.0" width="206" height="273"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="273" id="7Cl-Ne-P4c"/>
@@ -228,7 +228,7 @@
                                                         <action selector="buttonpass:" destination="qy7-o4-L06" eventType="touchUpInside" id="dTb-jI-sVI"/>
                                                     </connections>
                                                 </button>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="django" translatesAutoresizingMaskIntoConstraints="NO" id="9qD-M1-v7c">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pink" translatesAutoresizingMaskIntoConstraints="NO" id="9qD-M1-v7c">
                                                     <rect key="frame" x="0.0" y="79" width="206" height="273"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="206" id="3W4-Wx-ZTN"/>
@@ -676,9 +676,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Blue" width="778" height="1096"/>
+        <image name="Pink" width="1052" height="526"/>
         <image name="Rick and Morty, season 4, famous tv series, 2019, 1080x2160 wallpaper" width="1080" height="2160"/>
         <image name="Rick_And_Morty_Logo" width="1786" height="598"/>
-        <image name="django" width="200" height="300"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
