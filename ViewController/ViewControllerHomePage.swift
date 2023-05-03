@@ -205,8 +205,10 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
                 cell.indexPath = indexPath
                 cell.genderrImageView.image = UIImage(named: "male")
                 
+                let pastelRed = UIColor(red: 255/255, green: 128/255, blue: 128/255, alpha: 1.0)
+
                 if selectedLocationIDs.contains(indexPath.row) {
-                    cell.backgroundColor = UIColor.red
+                    cell.backgroundColor = pastelRed
                 } else {
                     cell.backgroundColor = UIColor.white
                 }
@@ -231,8 +233,10 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
                 cell.indexPath = indexPath
                 cell.genderrImageView.image = UIImage(named: "female")
                 
+                let pastelRed = UIColor(red: 255/255, green: 128/255, blue: 128/255, alpha: 1.0)
+
                 if selectedLocationIDs.contains(indexPath.row) {
-                    cell.backgroundColor = UIColor.red
+                    cell.backgroundColor = pastelRed
                 } else {
                     cell.backgroundColor = UIColor.white
                 }
@@ -252,9 +256,10 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
                cell.hucreProtocol = self
                cell.indexPath = indexPath
                cell.genderrImageView.image = UIImage(named: "question-mark")
-               
+               let pastelRed = UIColor(red: 350/350, green: 128/255, blue: 128/255, alpha: 1.0)
+
                if selectedLocationIDs.contains(indexPath.row) {
-                   cell.backgroundColor = UIColor.red
+                   cell.backgroundColor = pastelRed
                } else {
                    cell.backgroundColor = UIColor.white
                }
