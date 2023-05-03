@@ -19,6 +19,8 @@ class ViewControllerHomePage: UIViewController, DifferentCellProtocol{
     var film:Character?
     var locationsList = [String]()
     var selectedLocationIDs: [Int] = []
+    var selectedLocationID: Int?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -131,13 +133,25 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
             let selectedLocation = locationsList[indexPath.item]
             for character in characters {
                 if character.location.name == selectedLocation {
-                    selectedLocationIDs.append(character.id)
+                    selectedLocationIDs.append(character.id - 1)
+                    
+                    
+                    selectedLocationID = character.id
+                    
+                    print("adı", character.name)
+                    print("idsi", character.id)
                     // Display of selected location 'not complete'
                 }
             }
+            
+            
+            
             print("Selected location IDs: \(selectedLocationIDs)")
+            
         }
     }
+    
+
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if collectionView == locationCollectionView {
             if let cell = collectionView.cellForItem(at: indexPath) as? HorizontalListCollectionViewCell {
@@ -153,6 +167,8 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
             return characters.count
         }
     }
+   
+   
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == locationCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell2", for: indexPath) as! HorizontalListCollectionViewCell
@@ -174,6 +190,7 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
             return cell
             
         } else {
+            
             let film = characters[indexPath.row]
             if film.gender == .male {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell", for: indexPath) as! CollectionViewCellHomePage
@@ -187,9 +204,21 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
                 cell.hucreProtocol = self
                 cell.indexPath = indexPath
                 cell.genderrImageView.image = UIImage(named: "male")
+                
+                if selectedLocationIDs.contains(indexPath.row) {
+                    cell.backgroundColor = UIColor.red
+                } else {
+                    cell.backgroundColor = UIColor.white
+                }
+
+                
+                
                 return cell
             }
             else if film.gender == .female {
+                
+                
+                
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DifferentCell", for: indexPath) as! DifferentCell
                 cell.labelCharacterName.text = film.name
                 // Load the character's image using Kingfisher
@@ -201,9 +230,17 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
                 cell.hucreProtocol = self
                 cell.indexPath = indexPath
                 cell.genderrImageView.image = UIImage(named: "female")
+                
+                if selectedLocationIDs.contains(indexPath.row) {
+                    cell.backgroundColor = UIColor.red
+                } else {
+                    cell.backgroundColor = UIColor.white
+                }
+
                 return cell
             }
            else {
+               
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell", for: indexPath) as! CollectionViewCellHomePage
                 cell.labelCharacterName.text = film.name
                 // Load the character's image using Kingfisher
@@ -212,11 +249,18 @@ extension ViewControllerHomePage:UICollectionViewDelegate,UICollectionViewDataSo
                 cell.imageViewCharacterPicture.kf.setImage(with: imageUrl)
                 cell.layer.borderColor = UIColor.lightGray.cgColor
                 cell.layer.borderWidth = 0.5
-                cell.hucreProtocol = self
-                cell.indexPath = indexPath
-                cell.genderrImageView.image = UIImage(named: "question-mark")
-                return cell
-            }
+               cell.hucreProtocol = self
+               cell.indexPath = indexPath
+               cell.genderrImageView.image = UIImage(named: "question-mark")
+               
+               if selectedLocationIDs.contains(indexPath.row) {
+                   cell.backgroundColor = UIColor.red
+               } else {
+                   cell.backgroundColor = UIColor.white
+               }
+               
+               return cell
+           }
         }
     }
 }
