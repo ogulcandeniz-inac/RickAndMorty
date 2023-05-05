@@ -1,5 +1,8 @@
 Bu belge, Invio 2023 Çekirge Programı için İphone 14 Pro Max uyarlı yapmış olduğum Rick And Morty uygulamasının tanıtımını içermektedir.
 
+Projeyi yaparken öğrendiğim bilgileri pekiştirmek ve başka insanlarla yararı dokunabilmesi adına bir Medium yazısıda yazdım. Buradaki linkten ulaşabilirsiniz. https://medium.com/@ogulcandeniz/ios-geliştirmeye-başlarken-öğrendiklerim-6760532b623a
+
+
 - [ Teknik Beceriler ]
   - [ Mimari ](#mimari)
   - [ Kütüphane ](#kütüphane)
