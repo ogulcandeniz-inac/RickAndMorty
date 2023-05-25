@@ -1,6 +1,6 @@
-Bu belge, Invio 2023 Çekirge Programı için İphone 14 Pro Max uyarlı yapmış olduğum Rick And Morty uygulamasının tanıtımını içermektedir.
+Rick And Morty uygulamasının tanıtımını içermektedir.
 
-Projeyi yaparken öğrendiğim bilgileri pekiştirmek ve başka insanlarla yararı dokunabilmesi adına bir Medium yazısıda yazdım. Buradaki linkten ulaşabilirsiniz. https://medium.com/@ogulcandeniz/ios-geliştirmeye-başlarken-öğrendiklerim-6760532b623a
+Projeyi yaparken öğrendiğim bilgileri pekiştirmek ve başka insanlara faydalı olması amacıyla bir Medium yazısı da yazdım. Buradaki linkten projeyi yaparken nelere dikkat ettiğimi, hangi teknolojileri kullandığımı öğrenebilir ve kendinizi geliştirebilirsiniz. https://medium.com/@ogulcandeniz/ios-geliştirmeye-başlarken-öğrendiklerim-6760532b623a
 
 
 - [ Teknik Beceriler ]
@@ -64,6 +64,4 @@ Olarak ayarlanmıştır.
 Uygulama yan döndürülmüş bir şekilde kullanılmaktadır. Bunu yapabilmek için 'Scroll View' kullanılmıştır ve ayarlanmış olan bilgilerde kayma veya bozulma olmamaktadır.
 
 <img width="343" alt="Ekran Resmi 2023-04-24 21 13 56" src="https://user-images.githubusercontent.com/109241786/234092201-283f44f7-9e8b-4a5c-97df-80b45791580e.png">
-
-
 
